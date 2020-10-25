@@ -1,0 +1,25 @@
+/* controls responsiveness of header components */
+
+.banner {
+  /* height takes up 80% of screen */
+  height: 40vh;
+  position: relative;
+  background: url("https://www.elitetraveler.com/wp-content/uploads/2019/01/Landing-Page-min.png") top center;
+}
+
+
+.banner__info{
+  background-color: black;
+  color: white;
+  padding-top: 25vh;
+  padding-left: 5vw;
+  padding-right: 5vh;
+  padding-bottom: 5vh;
+  width: 40vw;
+}
+
+.banner__info > button {
+  background-color: aquamarine;
+  color: white;
+  text-transform: inherit;
+}
