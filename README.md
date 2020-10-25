@@ -26,6 +26,7 @@ $ npm install -g firebase-tools
 
 ## Project Guide
 Directory structure: similar to Project 1 
+
 Theme: based on AirBnB - rounded and white base with color on top
 
 ## Weekly Goals
