@@ -2,7 +2,14 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 ## Setup
 
-Navigate to the home directory (approject2) and run:
+Install with
+
+```sh
+$ git clone https://github.com/hulikalruthu/approject2
+$ cd approject2
+```
+
+If already cloned, navigate to the home directory (approject2) and run:
 
 ```sh
 $ npm install
