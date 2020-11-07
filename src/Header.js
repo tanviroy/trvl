@@ -1,11 +1,14 @@
 import React from 'react'
 import './Header.css'
-import SearchIcon from "@material-ui/icons/Search";
 import LanguageIcon from '@material-ui/icons/Language';
 import ArrowDropDownIcon from '@material-ui/icons/ArrowDropDown';
 import { Avatar } from '@material-ui/core';
 
+
 function Header() {
+
+
+
   return (
     <div className='header'>
       <img
@@ -14,10 +17,7 @@ function Header() {
         alt = ""
       />
 
-      <div className='header__center'>
-        <input type='text' />
-        <SearchIcon/>
-      </div>
+
 
       <div
         className='header__right' >

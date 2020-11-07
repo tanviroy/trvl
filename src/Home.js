@@ -5,7 +5,7 @@ import Banner from './Banner'
 function Home() {
   return (
     <div className = 'Home'>
-      <h1>Home Component</h1>
+      {/* <h1>Home Component</h1> */}
       <Banner />
     </div>
   )
