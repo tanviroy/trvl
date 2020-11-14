@@ -1,4 +1,9 @@
-// Entry point for backend.
+
+// This is the entry point for the backend (aka the index.js file). 
+// All backend dependencies are connected here. 
+// Mongoose is connected, RESTful routes defined.
+
+
 const mongoose = require("mongoose");
 const express = require("express");
 const cors = require("cors");

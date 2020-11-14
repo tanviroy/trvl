@@ -11,18 +11,20 @@ import Hotel from "./Pages/Hotel";
 import Register from "./Pages/Register";
 import Login from "./Pages/Login";
 import Profile from "./Pages/Profile";
+import FooterComp from "./components/footer";
 
 function App() {
   return (
     <BrowserRouter>
 
         <Route path="/" exact component={Home} />
-        <Route path="/explore" exact component={Explore} />
-        <Route path="/explore/" component={Hotel} />
+        <Route path="/explore-trvl" exact component={Explore} />
+        <Route path="/trvl/" component={Hotel} />
         <Route path="/register" component={Register} />
         <Route path="/login" component={Login} />
         <Route path="/profile" component={Profile} />
 
+        <FooterComp />
     </BrowserRouter>
 
   );

@@ -1,0 +1,34 @@
+/* CSS FOR EXPLORE PAGE ONLY */
+
+.header {
+  background-image: url(https://res.cloudinary.com/dfymeww45/image/upload/v1604912000/img1_f11fbf.png);
+  height: 20rem;
+  background-size: contain;
+}
+
+/* Hotel Results (L-Filters and Sorts, R-Results) */
+.container2 {
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  padding-top: 5%;
+}
+
+.left2 {
+  flex: 1;
+  width: auto;
+  height: 100%;
+  padding: 10%;
+  font-size: large;
+  text-align: center;
+  background-color: darkmagenta;
+}
+
+.right2 {
+  flex: 7;
+  padding: 10%;
+  font-size: large;
+  background-color: mediumslateblue;
+}
