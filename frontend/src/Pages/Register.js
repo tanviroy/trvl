@@ -1,19 +1,64 @@
 // Register/ SignIn Page
 
-import React, { Component } from "react";
+import React, { useState } from "react";
+import Axios from "axios"; // for making http requests
 import "../App.css";
 
-class Register extends Component {
-  
-    render() {
-      return (
-        <div>
-        
-            <h1>Register Page</h1>
-  
-        </div>
-      );
-    }
-  }
+export default function Register() {
+  const [registerUsername, setRegisterUsername] = useState("");
+  const [registerPassword, setRegisterPassword] = useState("");
+  const [registerMobile, setRegisterMobile] = useState("");
+  const [registerEmail, setRegisterEmail] = useState("");
 
-export default Register;
+
+  const register = () => {
+    Axios({
+      method: "POST",
+      data: {
+        username: registerUsername,
+        password: registerPassword,
+        mobile: registerMobile,
+        email: registerEmail,
+      },
+      withCredentials: true,
+      url: "http://localhost:5000/register",
+    }).then(function (res) {
+      console.log(res);
+      alert(res.data);
+    });
+  };
+
+
+  
+  return (
+    <div className="login">
+      <div>
+        <h1>Register Now!</h1>
+        <input
+          placeholder="Name"
+          onChange={(e) => setRegisterUsername(e.target.value)}
+        />
+        <br />
+        <input
+          placeholder="Mobile Number"
+          onChange={(e) => setRegisterMobile(e.target.value)}
+        />
+        <br />
+        <input
+          placeholder="Email ID"
+          onChange={(e) => setRegisterEmail(e.target.value)}
+        />
+        <br />
+        <input
+          placeholder="Password"
+          type="password"
+          onChange={(e) => setRegisterPassword(e.target.value)}
+        />
+        <br />
+        <button onClick={register}>Submit</button>
+      </div>
+      <br /><br />
+
+    </div>
+  );
+}

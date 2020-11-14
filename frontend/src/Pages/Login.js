@@ -1,19 +1,63 @@
 // Login Page
 
-import React, { Component } from "react";
+import React, { useState } from "react";
+import { Link } from "react-router-dom";
+import Axios from "axios"; // for making http requests
+import GoogleButton from "react-google-button";
 import "../App.css";
 
-class Login extends Component {
-  
-    render() {
-      return (
-        <div>
-        
-            <h1>Login Page</h1>
-  
-        </div>
-      );
-    }
-  }
+export default function Login() {
+  const [loginUsername, setLoginUsername] = useState("");
+  const [loginPassword, setLoginPassword] = useState("");
 
-export default Login;
+  const login = () => {
+
+    Axios({
+      method: "POST",
+      data: {
+        username: loginUsername,
+        password: loginPassword,
+      },
+      withCredentials: true,
+      url: "http://localhost:5000/login",
+    }).then(function (res) {
+      console.log(res);
+      alert(res.data);
+      
+    });
+  };
+
+  const googleAuth = () => {
+    window.open("http://localhost:5000/google");
+  };
+
+  
+  return (
+    <div className="login">
+      
+      <div>
+        <h1>Login</h1>
+        <input
+          placeholder="Email ID"
+          onChange={(e) => setLoginUsername(e.target.value)}
+        />
+        <br />
+        <input
+          placeholder="Password"
+          type="password"
+          onChange={(e) => setLoginPassword(e.target.value)}
+        />
+        <br />
+        <button onClick={login}>Continue</button><br/>
+
+        <center>
+          <GoogleButton onClick={googleAuth}/>
+        </center>
+
+      </div>
+      <br /><br />
+      <div>Don't have an account yet? <Link to={"/register"}>Sign Up Now!</Link></div>
+
+    </div>
+  );
+}
