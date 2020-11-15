@@ -1,6 +1,7 @@
 // Register/ SignIn Page
 
 import React, { useState } from "react";
+import NavbarComp from "../components/navbar";
 import Axios from "axios"; // for making http requests
 import "../App.css";
 
@@ -32,6 +33,9 @@ export default function Register() {
   
   return (
     <div className="login">
+      <div className="header">
+          <NavbarComp />
+        </div>
       <div>
         <h1>Register Now!</h1>
         <input

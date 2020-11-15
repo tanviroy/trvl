@@ -2,6 +2,7 @@
 
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
+import NavbarComp from "../components/navbar";
 import Axios from "axios"; // for making http requests
 import GoogleButton from "react-google-button";
 import "../App.css";
@@ -34,6 +35,10 @@ export default function Login() {
   
   return (
     <div className="login">
+
+        <div className="header">
+          <NavbarComp />
+        </div>
       
       <div>
         <h1>Login</h1>

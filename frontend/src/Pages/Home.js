@@ -2,7 +2,7 @@
 
 import React, { Component } from "react";
 import "../App.css";
-import "../styles/home.css";
+import "../styles/Home.css";
 import "../styles/Switch.css"
 import {Link} from 'react-router-dom'
 import NavbarComp from "../components/navbar";
