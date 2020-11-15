@@ -108,11 +108,19 @@ app.post("/register", (req, res) => {
   
 //========================================= 
 
+app.get('/userstatus', (req, res) => {
+  if (!req.user){
+    res.send(false)
+  }
+  else{
+    res.send(true)
+  }
+})
 
 app.get('/', (req, res) => {
   res.send('Hello World!')
 })
 
 app.listen(PORT, () => {
-  console.log(`Example app listening at http://localhost:${PORT}`)
+  console.log(`Backend started at http://localhost:${PORT}`)
 })

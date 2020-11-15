@@ -6,6 +6,115 @@
   background-size: contain;
 }
 
+/* Search Bar Styling */
+
+.search {
+  margin: 0 auto !important;
+  max-width: 850px !important;
+  margin-top: -30px !important;
+}
+.search1 {
+  border: 1px solid #dddddd !important;
+  border-radius: 32px !important;
+  color: #222222 !important;
+  display: flex !important;
+  height: 66px !important;
+  position: relative !important;
+  width: 100% !important;
+  box-shadow: 0px 16px 32px rgba(0, 0, 0, 0.15), 0px 3px 8px rgba(0, 0, 0, 0.1) !important;
+  --big-search-form-background: #ffffff !important;
+  background-color: #ffffff !important;
+}
+input,
+select {
+  border: none;
+}
+
+.destination {
+  display: flex !important;
+  flex: 1 0 0% !important;
+  min-width: 0px !important;
+  position: relative !important;
+  align-items: center !important;
+}
+
+.search-input {
+  cursor: pointer !important;
+  display: block !important;
+  background-clip: padding-box !important;
+  border: 1px solid transparent !important;
+  border-radius: 32px !important;
+  flex: 1 0 0% !important;
+  min-width: 0px !important;
+  padding: 14px 32px !important;
+  align-items: center !important;
+}
+
+.dates {
+  display: flex !important;
+  flex: 2 0 0% !important;
+  min-width: 0px !important;
+  position: relative !important;
+  align-items: center !important;
+}
+
+.guests {
+  align-items: center !important;
+  display: flex !important;
+  min-width: 0px !important;
+  position: relative !important;
+  flex: 0.8 0 auto !important;
+}
+
+.button-container {
+  align-items: center !important;
+  text-align: right !important;
+  display: flex !important;
+  min-width: 0px !important;
+  position: relative !important;
+  flex: 0.2 0 auto !important;
+}
+
+.guest-num {
+  appearance: none !important;
+  background: transparent !important;
+  border: 0px !important;
+  cursor: pointer !important;
+  display: block !important;
+  margin: 0px !important;
+  outline: none !important;
+  padding: 1px !important;
+  text-align: left !important;
+  text-decoration: none !important;
+  flex: 1 0 0% !important;
+  width: 0px !important;
+  z-index: 3 !important;
+}
+
+.search-button {
+  margin-left: -80% !important;
+  padding: 30% 50% !important;
+  position: absolute !important;
+  z-index: 5 !important;
+  text-align: center !important;
+  align-items: center !important;
+  background-color: white;
+  border-radius: 30px;
+  border: none;
+  text-decoration: none;
+  display: inline-block;
+  cursor: pointer;
+  box-shadow: 0px 0px 15px 5px rgba(0, 0, 0, 0.15),
+    0px 3px 8px rgba(0, 0, 0, 0.1) !important;
+}
+
+.separator {
+  align-self: center !important;
+  border-right: 1px solid #dddddd !important;
+  flex: 0 0 0px !important;
+  height: 32px !important;
+}
+
 /* Hotel Results (L-Filters and Sorts, R-Results) */
 .container2 {
   display: -webkit-box;
@@ -23,12 +132,12 @@
   padding: 10%;
   font-size: large;
   text-align: center;
-  background-color: darkmagenta;
+  background-color: rgb(196, 196, 196);
 }
 
 .right2 {
   flex: 7;
   padding: 10%;
   font-size: large;
-  background-color: mediumslateblue;
+  background-color: rgb(121, 121, 121);
 }

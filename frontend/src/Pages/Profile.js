@@ -1,6 +1,7 @@
 // Profile Page
 
 import React, { Component } from "react";
+import NavbarComp from "../components/navbar";
 import Axios from "axios";
 import "../App.css";
 
@@ -21,6 +22,9 @@ class Profile extends Component {
     render() {
       return (
         <div>
+          <div className="header">
+            <NavbarComp />
+          </div>
         
             <h1>Profile Page</h1>
             <center>
