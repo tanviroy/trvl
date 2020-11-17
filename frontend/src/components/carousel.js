@@ -12,7 +12,7 @@ export default class CarouselComp extends Component {
         <Carousel.Item>
           <img
             className="d-block w-100"
-            src="https://res.cloudinary.com/dfymeww45/image/upload/v1604912000/img1_f11fbf.png"
+            src="https://res.cloudinary.com/ashokacs/image/upload/v1605586021/banner1_alx8dx.png"
             alt="First slide"
             style={{ height: "10%" }}
           />
@@ -21,7 +21,7 @@ export default class CarouselComp extends Component {
         <Carousel.Item>
           <img
             className="d-block w-100"
-            src="https://res.cloudinary.com/dfymeww45/image/upload/v1604912000/img2_gul4zh.png"
+            src="https://res.cloudinary.com/ashokacs/image/upload/v1605586021/banner2_gphaeu.png"
             alt="Second slide"
             style={{ height: "20%" }}
           />
@@ -30,7 +30,7 @@ export default class CarouselComp extends Component {
         <Carousel.Item>
           <img
             className="d-block w-100"
-            src="https://res.cloudinary.com/dfymeww45/image/upload/v1604912000/img3_wclz2w.png"
+            src="https://res.cloudinary.com/ashokacs/image/upload/v1605586021/banner3_fxd97k.png"
             alt="Third slide"
             style={{ height: "20%" }}
           />

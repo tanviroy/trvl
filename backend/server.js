@@ -15,6 +15,7 @@ const expressSession = require("express-session");
 const bodyParser = require("body-parser");
 const nodemailer = require('nodemailer');
 const User = require("./user");
+const Hotel = require("./hotels");
 
 
 const app = express()
@@ -106,7 +107,146 @@ app.post("/register", (req, res) => {
     });
   });
   
+
+// =================== User Details ROUTES:
+
+app.get("/getuser", (req, res) => {
+  if(!req.user){
+    res.send("Please login first")
+  }
+  if(req.user){
+    res.send(req.user);
+  }
+});
+
+app.post("/update/name", (req, res) => {
+  User.findOne({ _id: req.user._id }, async (err, doc) => {
+    if (err) throw err;
+    if (!doc) res.send("User does not exist!");
+    if (doc) {
+      doc.name = req.body.name;
+      await doc.save();
+      res.send("User name updated.");
+    }
+  });
+});
+
+app.post("/update/number", (req, res) => {
+  User.findOne({ _id: req.user._id }, async (err, doc) => {
+    if (err) throw err;
+    if (!doc) res.send("User does not exist!");
+    if (doc) {
+      doc.mobile = req.body.mobile;
+      await doc.save();
+      res.send("User mobile updated.");
+    }
+  });
+});
+
+app.post("/update/email", (req, res) => {
+  User.findOne({ _id: req.user._id }, async (err, doc) => {
+    if (err) throw err;
+    if (!doc) res.send("User does not exist!");
+    if (doc) {
+      doc.email = req.body.email;
+      await doc.save();
+      res.send("User email updated.");
+    }
+  });
+});
+
+app.post("/update/address", (req, res) => {
+  User.findOne({ _id: req.user._id }, async (err, doc) => {
+    if (err) throw err;
+    if (!doc) res.send("User does not exist!");
+    if (doc) {
+      doc.address = req.body.address;
+      await doc.save();
+      res.send("User address updated.");
+    }
+  });
+});
+
+
+// =================== Hotel ROUTES:
+
+app.get("/gethotels", (req, res) => {
+  Hotel.find({}, async(err,doc) => {
+    if (!doc) res.send("No hotels in DB");
+    if (doc){
+      res.send(doc);
+    }
+  })
+});
+
 //========================================= 
+
+app.post("/addhotel", (req, res) => {
+
+  var availability = [
+    { date: new Date(2020,10,16), rooms: 3 },
+    { date: new Date(2020,10,17), rooms: 3 },
+    { date: new Date(2020,10,18), rooms: 3 },
+    { date: new Date(2020,10,19), rooms: 3 },
+    { date: new Date(2020,10,20), rooms: 3 },
+    { date: new Date(2020,10,21), rooms: 3 },
+    { date: new Date(2020,10,22), rooms: 3 },
+    { date: new Date(2020,10,23), rooms: 3 },
+    { date: new Date(2020,10,24), rooms: 3 },
+    { date: new Date(2020,10,25), rooms: 3 },
+    { date: new Date(2020,10,26), rooms: 3 },
+    { date: new Date(2020,10,27), rooms: 3 },
+    { date: new Date(2020,10,28), rooms: 3 },
+    { date: new Date(2020,10,29), rooms: 3 },
+    { date: new Date(2020,10,30), rooms: 3 },
+    { date: new Date(2020,11,1), rooms: 3 },
+    { date: new Date(2020,11,2), rooms: 3 },
+    { date: new Date(2020,11,3), rooms: 3 },
+    { date: new Date(2020,11,4), rooms: 3 },
+    { date: new Date(2020,11,5), rooms: 3 },
+    { date: new Date(2020,11,6), rooms: 3 },
+    { date: new Date(2020,11,7), rooms: 3 },
+    { date: new Date(2020,11,8), rooms: 3 },
+    { date: new Date(2020,11,9), rooms: 3 },
+    { date: new Date(2020,11,10), rooms: 3 },
+    { date: new Date(2020,11,11), rooms: 3 },
+    { date: new Date(2020,11,12), rooms: 3 },
+    { date: new Date(2020,11,13), rooms: 3 },
+    { date: new Date(2020,11,14), rooms: 3 },
+    { date: new Date(2020,11,15), rooms: 3 },
+    { date: new Date(2020,11,16), rooms: 3 },
+    { date: new Date(2020,11,17), rooms: 3 },
+    { date: new Date(2020,11,18), rooms: 3 },
+    { date: new Date(2020,11,19), rooms: 3 },
+    { date: new Date(2020,11,20), rooms: 3 },
+    { date: new Date(2020,11,21), rooms: 3 },
+    { date: new Date(2020,11,22), rooms: 3 },
+    { date: new Date(2020,11,23), rooms: 3 },
+    { date: new Date(2020,11,24), rooms: 3 },
+    { date: new Date(2020,11,25), rooms: 3 },
+    { date: new Date(2020,11,26), rooms: 3 },
+    { date: new Date(2020,11,27), rooms: 3 },
+    { date: new Date(2020,11,28), rooms: 3 },
+    { date: new Date(2020,11,29), rooms: 3 },
+    { date: new Date(2020,11,30), rooms: 3 },
+    { date: new Date(2020,11,31), rooms: 3 }]
+  
+  const newHotel = new Hotel({
+    name: req.body.name,
+    location: req.body.location,
+    desc: req.body.desc,
+    imageurl: req.body.imageurl,
+    price: req.body.price,
+    rating: req.body.rating,
+    amenities: req.body.amenities,
+    available: availability
+  });
+  newHotel.save();
+  res.send("New product added");
+
+});
+
+//=========================================
 
 app.get('/userstatus', (req, res) => {
   if (!req.user){

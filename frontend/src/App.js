@@ -11,6 +11,7 @@ import Hotel from "./Pages/Hotel";
 import Register from "./Pages/Register";
 import Login from "./Pages/Login";
 import Profile from "./Pages/Profile";
+import AddHotel from "./Pages/addhotel";
 import FooterComp from "./components/footer";
 
 function App() {
@@ -23,6 +24,7 @@ function App() {
         <Route path="/register" component={Register} />
         <Route path="/login" component={Login} />
         <Route path="/profile" component={Profile} />
+        <Route path="/addhotel" exact component={AddHotel} />
 
         <FooterComp />
     </BrowserRouter>

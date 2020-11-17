@@ -5,11 +5,13 @@ const hotel = new mongoose.Schema({
   name: String,  
   location: String,
   price: String,
+  desc: String,
   imageurl: [{ type: String }],
   amenities: [{ type: String }],
   rating: [{ type: Number }],
   reviews: [{ body: String, user: String, verified: String }],
-  booked: [{ type: String }],
+  bookers: [{ type: String }],
+  available: [{ date: Date, rooms: Number }],
   bucketlisted: [{ type: String }],
 });
 

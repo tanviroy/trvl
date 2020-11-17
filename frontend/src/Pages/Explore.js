@@ -4,8 +4,25 @@ import React, { Component } from "react";
 import "../App.css";
 import "../styles/explore.css";
 import NavbarComp from "../components/navbar";
+import Axios from "axios";
+
 
 class Explore extends Component {
+
+  state = {
+    hotels: [],
+  };
+
+  handleSearchClick = async(e) =>{
+    Axios({
+      method: "GET",
+      withCredentials: true,
+      url: "http://localhost:5000/gethotels",
+    }).then((res) => {
+      this.setState({ hotels: res.data });
+      console.log(res.data);
+    });
+  }
   
   render() {
     return (
@@ -53,7 +70,7 @@ class Explore extends Component {
           </div>
 
           <div className="button-container">
-                <button type="submit" className="search-button">Get</button>
+                <button type="submit" className="search-button" onClick={this.handleSearchClick}>Get</button>
           </div>
           
           </div>
