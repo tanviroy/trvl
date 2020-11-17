@@ -43,7 +43,7 @@ export default class NavbarComp extends Component {
           fixed="top"
         >
           <Navbar.Brand href="/" style={{ color: "white" }}>
-            <h1 class="trvl">trvl.</h1>
+            <h1 className="trvl">trvl.</h1>
           </Navbar.Brand>
   
           <Navbar.Collapse className="justify-content-end">
@@ -70,7 +70,7 @@ export default class NavbarComp extends Component {
           fixed="top"
         >
           <Navbar.Brand href="/" style={{ color: "white" }}>
-            <h1 class="trvl">trvl.</h1>
+            <h1 className="trvl">trvl.</h1>
           </Navbar.Brand>
   
           <Navbar.Collapse className="justify-content-end">

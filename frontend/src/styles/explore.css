@@ -1,9 +1,9 @@
 /* CSS FOR EXPLORE PAGE ONLY */
 
 .header {
-  background-image: url(https://res.cloudinary.com/dfymeww45/image/upload/v1604912000/img1_f11fbf.png);
+  background-image: url(https://res.cloudinary.com/ashokacs/image/upload/v1605586021/navbar_umxnk6.png);
   height: 20rem;
-  background-size: contain;
+  background-size: relative;
 }
 
 /* Search Bar Styling */
