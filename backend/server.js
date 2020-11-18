@@ -178,9 +178,40 @@ app.get("/gethotels", (req, res) => {
     }
   })
 });
+app.post("/gethotels", (req, res) => {
+  Hotel.find({}, async(err,doc) => {
+    if (!doc) res.send("No hotels in DB");
+    if (doc){
+      res.send(doc);
+    }
+  })
+});
+
+app.post("/hotelsearch", (req, res) => {
+  const loc = req.body.searchloc;
+  if (loc === ''){
+    Hotel.find({}, async (err, doc) =>{
+      if (err) throw err;
+      if (doc){
+        await res.send(doc);
+        //console.log(doc);
+      }
+    });
+  }
+  else{
+    Hotel.find({location : {$regex: loc, $options: 'i'} }, async (err, doc) =>{
+      if (err) throw err;
+      if (doc){
+        await res.send(doc);
+        //console.log(doc);
+      }
+    });
+  }
+  
+});
 
 app.get("/gethotelbyid/:id", (req, res) => {
-  const id = req.params.id;
+  let id = req.params.id;
   Hotel.find({_id : id}, async (err, doc) =>{
     if (err) throw err;
     if (doc){

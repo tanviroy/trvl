@@ -126,13 +126,25 @@ select {
 }
 
 .left2 {
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
   flex: 1;
   width: auto;
   height: 100%;
   padding: 10%;
   font-size: large;
   text-align: center;
-  background-color: rgb(196, 196, 196);
+  box-shadow: 0 0 10px 10px rgba(0, 0, 0, 0.2);
+  border-radius: 20px;
+  transition: 0.3s;
+  height: 100% !important;
+  margin: 3%;
+}
+
+.left2:hover {
+  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.4);
 }
 
 .right2 {
@@ -140,7 +152,7 @@ select {
   height: auto;
   padding: 3%;
   font-size: large;
-  background-color: rgb(121, 121, 121);
+  background-color: rgb(255, 255, 255);
 }
 
 .card {
@@ -149,34 +161,40 @@ select {
   display: -ms-flexbox;
   display: -webkit-flex;
   display: flex;
-  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  border-radius: 20px;
   transition: 0.3s;
   height: 100% !important;
   margin: 3%;
+  margin-left: 0;
+  padding: 0%;
 }
 
 .card:hover {
-  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.4);
+  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.4);
 }
 
-.hotel-name{
+.hotel-name {
   color: black;
 }
 
-.hotel-image{
+.hotel-image {
   flex: 1;
   text-align: left;
   max-height: 100%;
   margin: 0;
-  padding: 2%;
+  padding: 0%;
   width: 40%;
   position: absolute;
+  border-radius: 20px 0px 0px 20px;
 }
 
-.right3{
+.right3 {
   flex: 1;
   margin: 0;
-  padding: 0;
+  padding: 2%;
+  padding-top: 5%;
+  padding-bottom: 5%;
   text-align: right;
   width: auto;
 }
