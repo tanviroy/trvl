@@ -12,29 +12,72 @@ class Explore extends Component {
 
   state = {
     hotels: [],
+    searchloc: '',
+    datefrom: new Date(1999,0,1),
+    dateto: new Date(1999,0,1),
+
   };
 
+  handleLocChange = async(e) =>{
+    await this.setState({searchloc: e.target.value});
+  }
+
+  handleDateFromChange = async(e) =>{
+    await this.setState({datefrom: e.target.value});
+  }
+
+  handleDateToChange = async(e) =>{
+    await this.setState({dateto: e.target.value});
+  }
+
   handleSearchClick = async(e) =>{
+    e.preventDefault();
     Axios({
-      method: "GET",
+      method: "POST",
       withCredentials: true,
-      url: "http://localhost:5000/gethotels",
+      url: "http://localhost:5000/hotelsearch",
+      data:{
+        searchloc: this.state.searchloc,
+        datefrom: this.state.datefrom,
+        dateto: this.state.dateto
+      }
     }).then((res) => {
       this.setState({ hotels: res.data });
       console.log(res.data);
     });
+    //console.log(this.state.searchloc);
+    //console.log(this.state.datefrom);
   }
 
-  componentDidMount() {
-    fetch("http://localhost:5000/gethotels")
-      .then((res) => res.json())
-      .then((data) => {
-        this.setState({ hotels: data });
-        console.log(data);
-      })
-      .catch(console.log);
+  handleSortChange = async(e) =>{
+    console.log(e.target.value);
+
+    let list = this.state.hotels;
+    if (e.target.value === 'p-asc'){
+      list.sort(function (a, b) {
+        return a.price - b.price;
+      });
+    }
+    if (e.target.value === 'p-desc'){
+      list.sort(function (a, b) {
+        return b.price - a.price;
+      });
+    }
+    if (e.target.value === 'r-asc'){
+      list.sort(function (a, b) {
+        return a.rating[0] - b.rating[0];
+      });
+    }
+    if (e.target.value === 'r-desc'){
+      list.sort(function (a, b) {
+        return b.rating[0] - a.rating[0];
+      });
+    }
+    await this.setState({ hotels: list });
+
   }
-  
+
+
   render() {
     return (
       <div>
@@ -48,7 +91,7 @@ class Explore extends Component {
           <div className="search1" data-panel-bounds="true">
             <div className="destination">
               <div className="search-input">
-                <input type = "text" name = "Destination" placeholder = "Where to?"/>
+                <input type = "text" name = "Destination" placeholder = "Where to?" onChange={this.handleLocChange}/>
               </div>
             </div>
           <div className="separator"></div>
@@ -56,13 +99,13 @@ class Explore extends Component {
           <div className="dates">
             <div className="checkin">
               <div className="search-input">
-                <input type = "date" name = "From" placeholder = "From"/>
+                <input type = "date" name = "From" placeholder = "From"  onChange={this.handleDateFromChange}/>
               </div>
             </div>
             <div className="separator"></div>
             <div className="checkout">
               <div className="search-input">
-                <input type = "date" name = "To" placeholder = "To"/>
+                <input type = "date" name = "To" placeholder = "To"  onChange={this.handleDateToChange}/>
               </div>
             </div>
           </div>
@@ -91,10 +134,17 @@ class Explore extends Component {
 
         <div className="container2">
           <div className="left2">
-            Filters and sorts go here 
+            <select onChange = {this.handleSortChange} name="sortselect" id="sortselect">
+                  <option value="none" defaultValue disabled hidden> Sort By </option>
+                  <option value="p-asc">Price (Ascending)</option>
+                  <option value="p-desc">Price (Descending)</option>
+                  <option value="r-asc">Rating (Ascending)</option>
+                  <option value="r-desc">Rating (Descending)</option>
+                </select>
           </div>
+
+
           <div className="right2">
-            Hotel results go here
             <HotelsComp hotels={this.state.hotels} />
           </div>
         </div>

@@ -3,6 +3,7 @@
 import React, { Component } from "react";
 import "../App.css";
 import { Container } from "react-bootstrap";
+import NavbarComp from "../components/navbar";
 
 
 class Hotel extends Component {
@@ -14,6 +15,7 @@ class Hotel extends Component {
   componentDidMount() {
     let url = window.location.pathname
     let hotel_id = url.split("/")[2]
+    console.log(hotel_id)
     fetch("http://localhost:5000/gethotelbyid/" + hotel_id)
       .then((res) => res.json())
       .then((data) => {
@@ -27,6 +29,10 @@ class Hotel extends Component {
     return (
 
     <div style={{paddingBottom: "5%"}}>
+
+        <div className="header">
+          <NavbarComp />
+        </div>
       <div className="product-container">
 
         <div className="item-b">

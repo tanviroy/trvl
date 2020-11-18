@@ -20,7 +20,7 @@ function App() {
 
         <Route path="/" exact component={Home} />
         <Route path="/explore-trvl" exact component={Explore} />
-        <Route path="/trvl/" component={Hotel} />
+        <Route path="/hotel/" component={Hotel} />
         <Route path="/register" component={Register} />
         <Route path="/login" component={Login} />
         <Route path="/profile" component={Profile} />

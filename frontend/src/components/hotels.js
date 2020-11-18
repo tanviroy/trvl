@@ -14,16 +14,17 @@ const HotelsComp = ({ hotels }) => {
 
               <div className="card">
 
-                   
+     
                     <img
                       className="hotel-image"
                       src={hotel.imageurl}
                       alt="hotel"
                     />
+     
             
                
                 <div className="right3">
-                <Link to={"/hotel/" + hotel.name}><div className="hotel-name">
+                <Link to={"/hotel/" + hotel._id}><div className="hotel-name">
                   {hotel.name}
                 </div></Link>
 
