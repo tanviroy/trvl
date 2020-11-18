@@ -5,6 +5,7 @@ import "../App.css";
 import "../styles/explore.css";
 import NavbarComp from "../components/navbar";
 import Axios from "axios";
+import HotelsComp from "../components/hotels";
 
 
 class Explore extends Component {
@@ -22,6 +23,16 @@ class Explore extends Component {
       this.setState({ hotels: res.data });
       console.log(res.data);
     });
+  }
+
+  componentDidMount() {
+    fetch("http://localhost:5000/gethotels")
+      .then((res) => res.json())
+      .then((data) => {
+        this.setState({ hotels: data });
+        console.log(data);
+      })
+      .catch(console.log);
   }
   
   render() {
@@ -84,6 +95,7 @@ class Explore extends Component {
           </div>
           <div className="right2">
             Hotel results go here
+            <HotelsComp hotels={this.state.hotels} />
           </div>
         </div>
 
