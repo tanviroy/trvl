@@ -181,7 +181,7 @@ app.get("/gethotels", (req, res) => {
 
 app.get("/gethotelbyid/:id", (req, res) => {
   const id = req.params.id;
-  Hotel.find({id : id}, async (err, doc) =>{
+  Hotel.find({_id : id}, async (err, doc) =>{
     if (err) throw err;
     if (doc){
       res.send(doc);
