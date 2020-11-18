@@ -7,7 +7,6 @@
 }
 
 /* Search Bar Styling */
-
 .search {
   margin: 0 auto !important;
   max-width: 850px !important;
@@ -123,6 +122,7 @@ select {
   display: -webkit-flex;
   display: flex;
   padding-top: 5%;
+  height: 100%;
 }
 
 .left2 {
@@ -137,7 +137,46 @@ select {
 
 .right2 {
   flex: 7;
-  padding: 10%;
+  height: auto;
+  padding: 3%;
   font-size: large;
   background-color: rgb(121, 121, 121);
+}
+
+.card {
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+  transition: 0.3s;
+  height: 100% !important;
+  margin: 3%;
+}
+
+.card:hover {
+  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.4);
+}
+
+.hotel-name{
+  color: black;
+}
+
+.hotel-image{
+  flex: 1;
+  text-align: left;
+  max-height: 100%;
+  margin: 0;
+  padding: 2%;
+  width: 40%;
+  position: absolute;
+}
+
+.right3{
+  flex: 1;
+  margin: 0;
+  padding: 0;
+  text-align: right;
+  width: auto;
 }

@@ -179,6 +179,16 @@ app.get("/gethotels", (req, res) => {
   })
 });
 
+app.get("/gethotelbyid/:id", (req, res) => {
+  const id = req.params.id;
+  Hotel.find({_id : id}, async (err, doc) =>{
+    if (err) throw err;
+    if (doc){
+      res.send(doc);
+    }
+  });
+});
+
 //========================================= 
 
 app.post("/addhotel", (req, res) => {
