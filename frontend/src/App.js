@@ -14,6 +14,7 @@ import Profile from "./Pages/Profile";
 import AddHotel from "./Pages/addhotel";
 import FooterComp from "./components/footer";
 import AboutUs from "./Pages/AboutUs";
+import TermsandConditions from "./Pages/T&C";
 
 function App() {
   return (
@@ -27,6 +28,7 @@ function App() {
         <Route path="/profile" component={Profile} />
         <Route path="/addhotel" exact component={AddHotel} />
         <Route path="/about-us" exact component={AboutUs} />
+        <Route path="/terms-and-conditions" exact component={TermsandConditions} />
 
         <FooterComp />
     </BrowserRouter>
