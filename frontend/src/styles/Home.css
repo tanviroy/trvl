@@ -34,6 +34,23 @@ body::before {
   box-shadow: 0px 0px 50px 20px #000000;
 }
 
+.otherbuttons {
+  margin: 0;
+  padding: 1rem;
+  z-index: 0;
+  background:white;
+  opacity: 1;
+  border-radius: 40px;
+  border-color: #ffffff;
+  margin-top: 5%;
+  /* left: 40%; */
+  position: initial;
+  width: auto;
+  font-size: small;
+  color: #000000;
+  box-shadow: 0px 0px 10px 0px #00000091;
+}
+
 /* The Switch */
 *,
 *:before,

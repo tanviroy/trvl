@@ -53,7 +53,9 @@ export default function Login() {
           onChange={(e) => setLoginPassword(e.target.value)}
         />
         <br />
+        <Link to="/profile">
         <button onClick={login}>Continue</button><br/>
+        </Link>
 
         <center>
           <GoogleButton onClick={googleAuth}/>
@@ -61,8 +63,10 @@ export default function Login() {
 
       </div>
       <br /><br />
-      <div>Don't have an account yet? <Link to={"/register"}>Sign Up Now!</Link></div>
-
+      <div>Don't have an account yet? </div>
+      <Link to={"/register"}>
+        <h1>Sign Up Now!</h1>
+      </Link>
     </div>
   );
 }
