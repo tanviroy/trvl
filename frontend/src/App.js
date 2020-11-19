@@ -13,6 +13,7 @@ import Login from "./Pages/Login";
 import Profile from "./Pages/Profile";
 import AddHotel from "./Pages/addhotel";
 import FooterComp from "./components/footer";
+import AboutUs from "./Pages/AboutUs";
 
 function App() {
   return (
@@ -25,6 +26,7 @@ function App() {
         <Route path="/login" component={Login} />
         <Route path="/profile" component={Profile} />
         <Route path="/addhotel" exact component={AddHotel} />
+        <Route path="/about-us" exact component={AboutUs} />
 
         <FooterComp />
     </BrowserRouter>
