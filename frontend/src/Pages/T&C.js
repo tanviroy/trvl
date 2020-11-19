@@ -20,7 +20,7 @@ class TermsandConditions extends Component {
     <section>
       <div className="banner">
         <NavbarComp />
-        <Image src="https://res.cloudinary.com/dzky4f4zb/image/upload/v1605612159/about-min_wseesp.png" fluid />
+        <Image src="https://res.cloudinary.com/dzky4f4zb/image/upload/v1605796803/T_C_zmjhrq.png" fluid />
 
         {/* <CarouselComp /> */}
       </div>
