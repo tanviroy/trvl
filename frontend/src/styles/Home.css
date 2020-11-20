@@ -38,7 +38,7 @@ body::before {
   margin: 0;
   padding: 1rem;
   z-index: 0;
-  background:white;
+  background: white;
   opacity: 1;
   border-radius: 40px;
   border-color: #ffffff;
@@ -90,4 +90,12 @@ body::before {
   flex: 3;
   padding: 10%;
   background-color: salmon;
+}
+
+.right2 {
+  flex: 7;
+  height: auto;
+  padding: 8%;
+  font-size: large;
+  background-color: rgb(255, 255, 255);
 }

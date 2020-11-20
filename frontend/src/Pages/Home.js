@@ -5,11 +5,29 @@ import "../App.css";
 import "../styles/Home.css";
 import "../styles/Switch.css"
 import {Link} from 'react-router-dom'
+import Axios from "axios";
 import NavbarComp from "../components/navbar";
 import CarouselComp from "../components/carousel";
+import HotelCardComp from "../components/hotelcards";
+
 
 
 class Home extends Component {
+
+  state = {
+    hotels: [],
+  };
+
+  componentDidMount(){
+    Axios({
+      method: "GET",
+      withCredentials: true,
+      url: "http://localhost:5000/gethotels",
+    }).then((res) => {
+      
+        this.setState({ hotels: res.data});
+      });
+  }
   
   render() {
     return (
@@ -35,6 +53,10 @@ class Home extends Component {
         </label>
       </div>
     </section>
+
+    <div className="right2">
+            <HotelCardComp hotels={this.state.hotels} />
+    </div>
 
     <section style={{background: "rgba(220, 220, 220, 1)", height: "400px", paddingTop: "5%"}}>
         <div className="container">

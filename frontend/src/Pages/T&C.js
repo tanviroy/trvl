@@ -6,7 +6,6 @@ import "../styles/textoverimage.css";
 import "../styles/Switch.css"
 import {Link} from 'react-router-dom'
 import NavbarComp from "../components/navbar";
-import CarouselComp from "../components/carousel";
 import Image from 'react-bootstrap/Image'
 
 // T&C agreement reference https://www.pandadoc.com/travel-agency-agreement-template/

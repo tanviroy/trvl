@@ -1,0 +1,41 @@
+.hotelcard-container {
+  display: flex;
+  overflow-x: auto;
+  justify-content: space-evenly;
+  align-items: stretch;
+}
+
+.hotelcard {
+  flex: 1 1 0;
+  max-width: 50rem;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  border-radius: 20px;
+  transition: 0.3s;
+  margin: 10%;
+  padding: 0%;
+}
+
+.hotelcard:hover {
+  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.4);
+}
+
+.hotelcard-name,
+.hotelcard-location,
+.hotelcard-price {
+  color: black;
+  text-align: center;
+}
+
+.hotelcard-image {
+  max-width: 100%;
+  max-height: auto;
+  border-radius: 20px 20px 0px 0px;
+}
+
+.right3 {
+  margin: 5%;
+  padding: 15%;
+  padding-top: 5%;
+  padding-bottom: 10%;
+  text-align: right;
+}
