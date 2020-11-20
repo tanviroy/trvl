@@ -5,7 +5,6 @@ import NavbarComp from "../components/navbar";
 import Axios from "axios";
 import "../App.css";
 import Image from 'react-bootstrap/Image'
-import { Link } from "react-router-dom";
 import "../styles/Home.css";
 
 class Profile extends Component {
@@ -121,18 +120,10 @@ class Profile extends Component {
             <button className="otherbuttons"onClick={this.updateAdd}> Update address</button>
             </h4>
 
-            
+            <center>
+              <button onClick={this.logout}> Logout</button>
 
-            <Link to="/">
-            <button className="otherbuttons"onClick={this.logout}> Logout</button>
-            </Link>
-
-
-            {/* <center>
-              <Link to={"/"}>
-              <button style={{maxWidth: "10rem", padding: "0%", marginTop: "2%"}} onClick={this.logout}> Logout </button>
-              </Link>
-            </center> */}
+            </center>
           </section>
 
         </div>
