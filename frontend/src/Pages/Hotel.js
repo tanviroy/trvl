@@ -5,6 +5,11 @@ import "../App.css";
 import "../styles/hotel.css";
 import { Container } from "react-bootstrap";
 import NavbarComp from "../components/navbar";
+// below line adds libraries needed for google map embedding
+// import { Map, Marker, GoogleApiWrapper } from "google-maps-react"
+import ReactMapGL, { Marker, Popup } from "react-map-gl";
+import { useState, useEffect } from "react";
+import Map from "../components/testmap"
 
 
 class Hotel extends Component {
@@ -69,7 +74,12 @@ class Hotel extends Component {
          </div>
 
          <div className="right4">
-         ⚠️ Map goes here!
+           {/* <div className="Hotel">
+           <Map google={this.props.google} />
+           </div> */}
+         {/* ⚠️ Map goes here! */}
+         <Map />
+         
          </div>
 
         </div>
@@ -84,3 +94,6 @@ class Hotel extends Component {
 }
  
 export default Hotel;
+// export default GoogleApiWrapper({
+//   apiKey: ('AIzaSyB5ANN8IBUuZkmw1SWY9TpvF3wpG96XcQY')
+//  })(Hotel);

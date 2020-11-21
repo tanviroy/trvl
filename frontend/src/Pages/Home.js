@@ -9,6 +9,7 @@ import Axios from "axios";
 import NavbarComp from "../components/navbar";
 import CarouselComp from "../components/carousel";
 import HotelCardComp from "../components/hotelcards";
+import Worldmap from "../components/worldmap"
 
 
 
@@ -63,9 +64,13 @@ class Home extends Component {
             <div className="left">
               Lorem ipsum 
             </div>
-            <div className="right">
-              Map goes here
+            <div>
+            <Worldmap />
             </div>
+            {/* <div className="right">
+              Map goes here
+              <Worldmap />
+            </div> */}
         </div>
 
     </section>
