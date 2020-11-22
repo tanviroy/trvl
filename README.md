@@ -50,4 +50,5 @@ Theme: based on AirBnB - rounded and white base with color on top
   - [x] Setup login/user authentication
 
 ## Extras
-Recommendation engine, embedded map with hotels by location, "I'm feeling lucky" recommendation
+  - [ ] Embedded map with hotel markers
+Recommendation engine, "I'm feeling lucky" recommendation
