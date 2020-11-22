@@ -31,23 +31,23 @@ Theme: based on AirBnB - rounded and white base with color on top
 
 ## Weekly Goals
 ### Week 1
-  - [ ] Basic frontend
-  - [ ] Base database of hotels with all info
-  - [ ] Figure out how to use an API and pull hotel info
-  - [ ] Firebase setup
-  - [ ] Project structure
+  - [x] Basic frontend
+  - [x] Base database of hotels with all info
+  - [x] Figure out how to use an API and pull hotel info
+  - [x] Firebase setup
+  - [x] Project structure
 
 ### Week 2:
-  - [ ] Decide a Name
-  - [ ] Finalize aesthetic
+  - [x] Decide a Name
+  - [x] Finalize aesthetic
   - [ ] Implement booking feature by:
     - Area, Dates, Number of Guests
   - [ ] Implement Hotel Filters by:
     - location, star rating, cuisine type
 
 ### Week 3:
-  - [ ] Setup review system
-  - [ ] Setup login/user authentication
+  - [x] Setup review system
+  - [x] Setup login/user authentication
 
 ## Extras
 Recommendation engine, embedded map with hotels by location, "I'm feeling lucky" recommendation
