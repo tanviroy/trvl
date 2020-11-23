@@ -9,12 +9,8 @@ export default class FooterComp extends Component {
     return (
       <div className="footer">
         <div style={{ color: "#003060" }}>
-          <img
-            src="https://res.cloudinary.com/dl6m7txan/image/upload/v1602041582/FSHN-removebg-preview_oear1z.png"
-            height="50px"
-            alt="FSHN"
-          />
-
+          <b><h1 style={{fontWeight: "800", fontSize: "4rem", color: "white"}}>trvl.</h1></b>
+          <br />
           <div className="wrapper">
             <li>
               <Nav.Link href="/about-us">
@@ -22,7 +18,7 @@ export default class FooterComp extends Component {
               </Nav.Link>
             </li>
             <li>
-              <Nav.Link href="https://github.com/actuallysoham/trvl">
+              <Nav.Link href="https://github.com/hulikalruthu/approject2">
                 Made with ❤️ by Tanvi, Soham and Ruthu
               </Nav.Link>
             </li>

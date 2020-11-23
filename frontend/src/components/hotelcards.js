@@ -9,27 +9,27 @@ const HotelCardComp = ({ hotels }) => {
     return (
       <div className="hotelcard-container">
           {hotels.map((hotel) => (
-            <li key={hotel._id}>
+            <li className="hotelcard-items" key={hotel._id}>
               <div className="hotelcard">
+              <Link to={"/hotel/" + hotel._id}>
 
                   <img
                       className="hotelcard-image"
                       src={hotel.imageurl}
                       alt="hotel"
                     />
-                <div className="right3">
-                    <Link to={"/hotel/" + hotel._id}><div className="hotelcard-name">
-                    {hotel.name}
-                    </div></Link>
+
+                <div className="hotelcard-box">
+                    <div className="hotelcard-name">
+                    <b>{hotel.name}</b>
+                    </div>
                     <div className="hotelcard-location">
                     {hotel.location}
                     </div>
                     <div className="hotelcard-price">${hotel.price}</div>
                 </div>
-               
-
-                    
-                
+                                  
+              </Link>
               </div>
             </li>
           ))}

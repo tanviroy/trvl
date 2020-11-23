@@ -55,15 +55,15 @@ a:hover {
 }
 
 .footer {
-  background-color: #002C56;
+  background-color: #003060;
   text-align: center;
-  padding: 20px;
+  padding: 4%;
+  padding-bottom: 2.5%;
   position: relative;
   bottom: 0;
-  height: 17%;
+  height: 20%;
   width: 100%;
   font-size: large;
-  margin-top: 5%;
 }
 
 .wrapper {

@@ -14,24 +14,28 @@ body::before {
 .banner {
   margin: 0%;
   margin-top: 0px;
+  text-align: center;
+  justify-content: center;
 }
 
 /* 'Start Exploring' button */
 .start-exploring {
-  margin: 0;
   padding: 1%;
   z-index: 5;
   background: #ffffff;
   opacity: 1;
   border-radius: 40px;
   border-color: #ffffff;
+  margin: 0 auto;
   margin-top: 45%;
-  left: 40%;
   position: absolute;
+  text-align: center;
   width: 30rem;
   font-size: x-large;
   color: #000000;
   box-shadow: 0px 0px 50px 20px #000000;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
 
 .otherbuttons {
@@ -51,22 +55,6 @@ body::before {
   box-shadow: 0px 0px 10px 0px #00000091;
 }
 
-/* The Switch */
-*,
-*:before,
-*:after {
-  box-sizing: inherit;
-  margin: 0;
-  padding: 0;
-}
-
-.mid {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding-top: 1em;
-}
-
 /* Contact Us (L-info, R-map) */
 .container {
   display: -webkit-box;
@@ -77,19 +65,20 @@ body::before {
 }
 
 .left {
-  flex: 5;
+  flex: 4;
   width: auto;
-  height: 100%;
-  padding: 10%;
-  font-size: xx-large;
+  height: 45vh;
+  padding: 3%;
+  font-size: x-large;
   text-align: left;
-  background-color: plum;
+  background-color: white;
 }
 
 .right {
   flex: 3;
-  padding: 1%;
-  background-color: salmon;
+  margin: 0;
+  padding: 0;
+  height: 100%;
 }
 
 .right2 {
@@ -98,4 +87,71 @@ body::before {
   padding: 8%;
   font-size: large;
   background-color: rgb(255, 255, 255);
+}
+
+.text_1 {
+  animation: text1;
+}
+
+.text_2 {
+  animation: text2;
+}
+
+.text_3 {
+  animation: text3;
+}
+
+.text_1, .text_2, .text_3 {
+  overflow: hidden;
+  white-space: nowrap;
+  display: inline-block;
+  position: relative;
+  animation-duration: 20s;
+  animation-timing-function: steps(25, end);
+  animation-iteration-count: infinite;
+}
+
+.text_1::after, .text_2::after, .text_3::after {
+  content: " |";
+  position: absolute;
+  right: 0;
+  animation: caret infinite;
+  animation-duration: 1s;
+  animation-timing-function: steps(1, end);
+}
+
+@keyframes text3 {
+  0%, 50%, 100% {
+    width: 0;
+  }
+  10%, 40% {
+    width: 10em;
+  }
+}
+
+@keyframes text2 {
+  0%, 50%, 100% {
+    width: 0;
+  }
+  60%, 90% {
+    width: 10em;
+  }
+}
+
+@keyframes text1 {
+  0%, 50%, 100% {
+    width: 0;
+  }
+  10%, 40% {
+    width: 13em;
+  }
+}
+
+@keyframes caret {
+  0%, 100% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
 }

@@ -1,0 +1,48 @@
+.login {
+    max-width: 60%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 5%;
+    justify-content: center;
+    align-items: center;
+    padding: 2%;
+    margin-bottom: 5%;
+    padding-bottom: 3%;
+    border-radius: 25px;
+    background-color: white;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    font-size: large;
+}
+
+.input-box {
+    margin: 0.5%;
+    width: 40%;
+    border: 1px solid;
+    border-radius: 7px;
+    font-size: large;
+}
+
+.input-box:focus {
+    outline: none;
+    box-shadow: 0px 0px 2px #000000;
+}
+
+label {
+    padding: 3%;
+    font-size: large;
+}
+
+.sign-up-text {
+    color: black;
+    text-decoration: none;
+    font-size: medium !important;
+    font-weight: bold;
+}
+
+.sign-up-text:hover {
+    color: #003060;
+    font-size: medium !important;
+    text-decoration: underline;
+}
+
+  

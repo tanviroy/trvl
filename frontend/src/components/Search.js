@@ -21,10 +21,12 @@ function Search() {
     setEndDate(ranges.selection.endDate);
 }
 
-
   return (
     <div className ='search'>
-      <DateRangePicker ranges={[selectionrange]} onChange={select} />      
+      <DateRangePicker
+      color="#003060" 
+      ranges={[selectionrange]} 
+      onChange={select} />      
     </div>
   )
 }
