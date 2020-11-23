@@ -9,6 +9,7 @@ import Home from "./Pages/Home";
 import Explore from "./Pages/Explore";
 import Flight from "./Pages/Flight";
 import Hotel from "./Pages/Hotel";
+import Cars from "./Pages/Cars";
 import Register from "./Pages/Register";
 import Login from "./Pages/Login";
 import Profile from "./Pages/Profile";
@@ -32,6 +33,7 @@ function App() {
         <Route path="/addhotel" exact component={AddHotel} />
         <Route path="/about-us" exact component={AboutUs} />
         <Route path="/terms-and-conditions" exact component={TermsandConditions} />
+        <Route path="/cars" exact component={Cars} />
         {/* <Route path="/testmap" exact component={testmap} /> */}
 
         <FooterComp />
