@@ -16,6 +16,7 @@ import AddHotel from "./Pages/addhotel";
 import FooterComp from "./components/footer";
 import AboutUs from "./Pages/AboutUs";
 import TermsandConditions from "./Pages/T&C";
+import testmap from "./components/testmap";
 
 function App() {
   return (
@@ -31,6 +32,7 @@ function App() {
         <Route path="/addhotel" exact component={AddHotel} />
         <Route path="/about-us" exact component={AboutUs} />
         <Route path="/terms-and-conditions" exact component={TermsandConditions} />
+        {/* <Route path="/testmap" exact component={testmap} /> */}
 
         <FooterComp />
     </BrowserRouter>
