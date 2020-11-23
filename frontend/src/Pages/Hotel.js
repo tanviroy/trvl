@@ -3,8 +3,8 @@
 import React, { Component } from "react";
 import "../App.css";
 import "../styles/hotel.css";
-import { Container } from "react-bootstrap";
 import NavbarComp from "../components/navbar";
+import Axios from "axios";
 // below line adds libraries needed for google map embedding
 // import { Map, Marker, GoogleApiWrapper } from "google-maps-react"
 import ReactMapGL, { Marker, Popup } from "react-map-gl";
@@ -12,24 +12,67 @@ import { useState, useEffect } from "react";
 import Map from "../components/testmap"
 
 
+
 class Hotel extends Component {
 
   state = {
     hotels: [],
+    datefrom: "",
+    dateto: "",
   };
 
   componentDidMount() {
     let url = window.location.pathname
-    let hotel_id = url.split("/")[2]
-    console.log(hotel_id)
-    fetch("http://localhost:5000/gethotelbyid/" + hotel_id)
-      .then((res) => res.json())
-      .then((data) => {
-        this.setState({ hotels: data });
-        console.log(data);
-      })
-      .catch(console.log);
+    console.log(url.split("/"))
+    this.setState({datefrom: url.split("/")[3] })
+    this.setState({dateto: url.split("/")[4] })
+
+    Axios({
+      method: "GET",
+      withCredentials: true,
+      url: "http://localhost:5000/gethotelbyid/" + url.split("/")[2] + "/" + url.split("/")[3] + "/" + url.split("/")[4] ,
+    }).then((res) => {  
+      if (res.data){
+        this.setState({hotels: res.data });
+        console.log(res.data);
+      }
+    });
   }
+
+  handleBucketList(){
+    let url = window.location.pathname
+    let hotel_id = url.split("/")[2]
+
+    Axios({
+      method: "POST",
+      withCredentials: true,
+      url: "http://localhost:5000/addtobucketlist/" + hotel_id,
+    }).then((res) => {  
+      if (res.data){
+        console.log(res.data);
+      }
+    });
+  }
+
+  handleBook(){
+    let url = window.location.pathname
+
+    Axios({
+      method: "POST",
+      withCredentials: true,
+      data:{
+        hotelID: url.split("/")[2],
+        datefrom: url.split("/")[3],
+        dateto: url.split("/")[4]
+      },
+      url: "http://localhost:5000/bookhotel",
+    }).then((res) => {  
+      if (res.data){
+        console.log(res.data);
+      }
+    });
+  }
+
 
   render() {
     return (
@@ -65,11 +108,12 @@ class Hotel extends Component {
           <div><p style={{fontWeight: "600"}}>Hotel Amenities:</p>
             <ul>{hotel.amenities.map(name => <li style={{listStyleType: "disc"}} key={name}> {name} </li>)}</ul>
           </div><br />
+    <h2>{this.state.datefrom} to {this.state.dateto}</h2>
 
           <br />
 
-          <button>Book Now</button> &nbsp; &nbsp; &nbsp;
-          <button>Add to Bucket List</button>
+          <button onClick={this.handleBook}>Book Now</button> &nbsp; &nbsp; &nbsp;
+          <button onClick={this.handleBucketList}>Add to Bucket List</button>
           
          </div>
 

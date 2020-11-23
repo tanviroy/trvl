@@ -13,8 +13,8 @@ class Explore extends Component {
   state = {
     hotels: [],
     searchloc: '',
-    datefrom: new Date(1999,0,1),
-    dateto: new Date(1999,0,1),
+    datefrom: new Date(),
+    dateto: new Date(),
 
   };
 
@@ -145,7 +145,7 @@ class Explore extends Component {
 
 
           <div className="right2">
-            <HotelsComp hotels={this.state.hotels} />
+            <HotelsComp hotels={this.state.hotels} datefrom={this.state.datefrom} dateto={this.state.dateto} />
           </div>
         </div>
 

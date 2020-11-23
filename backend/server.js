@@ -16,6 +16,7 @@ const bodyParser = require("body-parser");
 const nodemailer = require('nodemailer');
 const User = require("./user");
 const Hotel = require("./hotels");
+var Amadeus = require('amadeus');
 
 
 const app = express()
@@ -56,6 +57,49 @@ app.use(passport.initialize());
 app.use(passport.session());
 require("./passportConfig")(passport);
 
+
+//========================================= amadeus ROUTES
+var amadeus = new Amadeus({
+  clientId: 'Xnc7wXfiMCNVXSKiUV7fgXS3V8uAQErF',
+  clientSecret: 'JTkx2KeymMlRISAQ'
+});
+
+app.get(`/citySearch`, async (req, res) => { 
+  console.log(req.query); 
+  var keywords = req.query.keyword; 
+  const response = await amadeus.referenceData.locations 
+    .get({ 
+      keyword: keywords, 
+      subType: "CITY,AIRPORT", 
+    }) 
+    .catch((x) => console.log(x)); 
+  try { 
+    await res.json(JSON.parse(response.body)); 
+  } catch (err) { 
+    await res.json(err); 
+  } 
+});
+
+app.post("/date", async function (req, res) { 
+  //console.log(req.body); 
+  arrival = req.body.arrival.toString(); 
+  locationDeparture = req.body.locationDeparture; 
+  locationArrival = req.body.locationArrival; 
+  const response = await amadeus.shopping.flightOffersSearch 
+    .get({ 
+      originLocationCode: locationDeparture, 
+      destinationLocationCode: locationArrival, 
+      departureDate: arrival.toString(),
+      adults: "1", 
+    }) 
+    .catch((err) => console.log(err)); 
+  try { 
+    await res.json(JSON.parse(response.body)); 
+    //console.log(response.body);
+  } catch (err) { 
+    await res.json(err); 
+  } 
+}); 
 
 //========================================= AUTHENTICATION ROUTES
 
@@ -187,19 +231,40 @@ app.post("/gethotels", (req, res) => {
   })
 });
 
+app.get("/viewedhotels", (req, res) => {
+  if(!req.user){
+    Hotel.find({}, (err,doc) => {
+      if (!doc) res.send("No hotels in DB");
+      if (doc){
+        res.send(doc.slice(1,6));
+      }
+    })
+  }
+  else{
+    Hotel.find({_id : {$in: req.user.visited}}, (err, doc) =>{
+      if (err) throw err;
+      if (doc){
+         res.send(doc.slice(1,6));
+      }
+    });
+  }
+  
+});
+
 app.post("/hotelsearch", (req, res) => {
   const loc = req.body.searchloc;
+ // console.log("destination passed: "+ loc);
   if (loc === ''){
     Hotel.find({}, async (err, doc) =>{
       if (err) throw err;
       if (doc){
-        await res.send(doc);
+         res.send(doc);
         //console.log(doc);
       }
     });
   }
   else{
-    Hotel.find({location : {$regex: loc, $options: 'i'} }, async (err, doc) =>{
+    Hotel.find({$or: [{location : {$regex: loc, $options: 'i'}},{iata : {$regex: loc, $options: 'i'}}]}, async (err, doc) =>{
       if (err) throw err;
       if (doc){
         await res.send(doc);
@@ -210,15 +275,82 @@ app.post("/hotelsearch", (req, res) => {
   
 });
 
-app.get("/gethotelbyid/:id", (req, res) => {
+app.get("/gethotelbyid/:id/:datefrom/:dateto", async (req, res) => {
   let id = req.params.id;
-  Hotel.find({_id : id}, async (err, doc) =>{
+  let d_from = req.params.datefrom;
+  let d_to = req.params.dateto;
+  Hotel.find({_id : id}, (err, doc) =>{
     if (err) throw err;
     if (doc){
       res.send(doc);
     }
   });
+  if (req.user){
+    User.findOne({_id: req.user._id}, async (err, doc) =>{
+      if (err) throw err;
+      if(doc){
+        doc.visited.push(id);
+        //console.log(doc)
+      }
+      await doc.save()
+    })
+
+  }
 });
+
+app.post("/addtobucketlist/:id", (req, res) => {
+  if(!req.user){
+    res.send("Please login first");
+  }
+  else{
+    Hotel.findOne({_id: req.params.id}, async (err,doc) => {
+      if (err) throw err;
+      if (doc){
+          if (doc.bucketlisted.includes(req.user._id)){
+            res.send("Hotel already exists in your bucketlist!");
+          }
+          else if(doc.bookers.includes(req.user._id)){
+            res.send("Product already purchased once!");
+          }
+          else{
+            User.findOne({ _id: req.user._id }, async (err, doc) => {
+              if (err) throw err;
+              if (!doc) res.send("User does not exist!");
+              if (doc) {
+                doc.bucketlist.push(req.params.id);
+                await doc.save();
+                res.send("Property added to bucketlist");
+              }
+            });
+            Hotel.findOne({ _id: req.params.id}, async (err, doc) => {
+              if (err) throw err;
+              if (!doc) res.send("Hotel does not exist!");
+              if (doc) {
+                doc.bucketlisted.push(req.user._id);
+                await doc.save();
+                res.send("New bucketlist-er added!");
+              }
+            });
+          }
+      }
+    }) 
+  }
+});
+
+app.post("/bookhotel", (req,res) =>{
+  datefrom = new Date(req.body.datefrom);
+  dateto = new Date(req.body.dateto);
+  Hotel.findOne({_id:req.body.hotelID}, (err,doc)=>{
+    if(doc){
+      var all = doc.available;
+      var selected = all.filter(rangeCheck);
+      function rangeCheck(value){
+        console.log(value._id)
+      }
+    }
+  })
+  res.send("Sab changa si")
+})
 
 //========================================= 
 

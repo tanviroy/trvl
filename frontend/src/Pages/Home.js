@@ -22,10 +22,10 @@ class Home extends Component {
     Axios({
       method: "GET",
       withCredentials: true,
-      url: "http://localhost:5000/gethotels",
+      url: "http://localhost:5000/viewedhotels",
     }).then((res) => {
-      
         this.setState({ hotels: res.data});
+        console.log(res.data)
       });
   }
   
@@ -61,7 +61,9 @@ class Home extends Component {
       </div>
     </section>
 
+
     <section style={{zIndex: "-1", background: "#003060", height: "400px", paddingTop: "5%"}}>
+
         <div className="container">
 
             <div className="left">
