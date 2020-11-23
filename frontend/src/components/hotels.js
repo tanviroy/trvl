@@ -5,7 +5,7 @@ import "../App.css";
 import "../styles/explore.css";
 import { Link } from "react-router-dom";
 
-const HotelsComp = ({ hotels }) => {
+const HotelsComp = ({ hotels, datefrom, dateto, selectHotel }) => {
     return (
       <div>
   
@@ -24,7 +24,7 @@ const HotelsComp = ({ hotels }) => {
             
                
                 <div className="right3">
-                <Link to={"/hotel/" + hotel._id}><div className="hotel-name">
+                <Link to={"/hotel/" + hotel._id +"/"+datefrom.toString()+"/"+dateto.toString()}><div className="hotel-name">
                   {hotel.name}
                 </div></Link>
 
@@ -32,7 +32,8 @@ const HotelsComp = ({ hotels }) => {
                   {hotel.location}
                 </div>
 
-                <div className="hotel-price">${hotel.price}</div>
+                <div className="hotel-price">${hotel.price}
+                <button className="flight-button" onClick={() => selectHotel(hotel.price, hotel._id)}>Select</button></div>
 
                 </div>
 

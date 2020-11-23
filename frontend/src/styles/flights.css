@@ -1,0 +1,30 @@
+.flight-name {
+  color: black;
+  font-size: large;
+  text-align: left;
+}
+
+.flight-price {
+  text-align: right;
+}
+
+.flight-container {
+  display: flex;
+  padding: 5%;
+  justify-content: space-evenly;
+  width: auto;
+}
+
+.flight-button {
+  display: block;
+  padding: 5%;
+  border-radius: 20px;
+  background-color: white;
+}
+
+.flight-button:hover {
+  display: block;
+  padding: 5%;
+  border-radius: 20px;
+  background-color: rgb(199, 199, 199);
+}

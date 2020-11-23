@@ -10,6 +10,7 @@ const user = new mongoose.Schema({
   mobile: Number,
   booked: [{ type: String }],
   bucketlist: [{ type: String }],
+  visited: [{ type: String }],
 });
 
 module.exports = mongoose.model("TRVL_User", user);
