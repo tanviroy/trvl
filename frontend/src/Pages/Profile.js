@@ -24,7 +24,7 @@ class Profile extends Component {
     Axios({
       method: "GET",
       withCredentials: true,
-      url: "http://localhost:5000/user",
+      url: "http://localhost:5000/getuser",
     }).then((res) => {
       if (res.data === "Please login first"){
         alert(res.data)
@@ -36,23 +36,7 @@ class Profile extends Component {
       }
       
     });
-    Axios({
-      method: "GET",
-      withCredentials: true,
-      url: "http://localhost:5000/getbookings",
-    }).then((res) => {
-     
-        this.setState({ booked: res.booked});      
-      
-    });
-    Axios({
-      method: "GET",
-      withCredentials: true,
-      url: "http://localhost:5000/getbucketlist",
-    }).then((res) => {
-      this.setState({ bucketlist: res.bucketlist});
-    });
-    
+
   };
 
     logout = () => {

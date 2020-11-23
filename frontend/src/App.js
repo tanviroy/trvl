@@ -7,6 +7,7 @@ import './App.css';
 
 import Home from "./Pages/Home";
 import Explore from "./Pages/Explore";
+import Flight from "./Pages/Flight";
 import Hotel from "./Pages/Hotel";
 import Register from "./Pages/Register";
 import Login from "./Pages/Login";
@@ -22,6 +23,7 @@ function App() {
 
         <Route path="/" exact component={Home} />
         <Route path="/explore-trvl" exact component={Explore} />
+        <Route path="/flight" exact component={Flight} />
         <Route path="/hotel/" component={Hotel} />
         <Route path="/register" component={Register} />
         <Route path="/login" component={Login} />

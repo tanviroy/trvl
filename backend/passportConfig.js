@@ -63,6 +63,7 @@ module.exports = function (passport) {
         email: user.email,
         booked: user.booked,
         bucketlist: user.bucketlist,
+        visited: user.visited,
       };
       cb(err, userInformation);
     });

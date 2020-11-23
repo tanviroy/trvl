@@ -22,10 +22,10 @@ class Home extends Component {
     Axios({
       method: "GET",
       withCredentials: true,
-      url: "http://localhost:5000/gethotels",
+      url: "http://localhost:5000/viewedhotels",
     }).then((res) => {
-      
         this.setState({ hotels: res.data});
+        console.log(res.data)
       });
   }
   
@@ -53,7 +53,7 @@ class Home extends Component {
         </label>
       </div>
     </section>
-
+    <h1><b>Recently Viewed Properties</b></h1>
     <div className="right2">
             <HotelCardComp hotels={this.state.hotels} />
     </div>

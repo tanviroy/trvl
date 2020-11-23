@@ -123,6 +123,7 @@ select {
   display: flex;
   padding-top: 5%;
   height: 100%;
+  flex-direction: row;
 }
 
 .left2 {
@@ -130,6 +131,8 @@ select {
   display: -moz-box;
   display: -ms-flexbox;
   display: -webkit-flex;
+  display: flex;
+  flex-direction: column;
   flex: 1;
   width: auto;
   height: 100%;
@@ -197,4 +200,17 @@ select {
   padding-bottom: 5%;
   text-align: right;
   width: auto;
+}
+
+.proceed-button {
+  background-color: white;
+  border-radius: 20px;
+  border: none;
+  margin-top: 15%;
+  padding: 5%;
+  text-decoration: none;
+  display: inline-block;
+  cursor: pointer;
+  box-shadow: 0px 0px 15px 5px rgba(0, 0, 0, 0.15),
+    0px 3px 8px rgba(0, 0, 0, 0.1) !important;
 }

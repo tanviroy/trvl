@@ -8,6 +8,7 @@ const hotel = new mongoose.Schema({
   desc: String,
   imageurl: [{ type: String }],
   amenities: [{ type: String }],
+  iata: [{ type: String }],
   rating: [{ type: Number }],
   reviews: [{ body: String, user: String, verified: String }],
   bookers: [{ type: String }],
