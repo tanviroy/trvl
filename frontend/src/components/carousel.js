@@ -14,7 +14,7 @@ export default class CarouselComp extends Component {
             className="d-block w-100"
             src="https://res.cloudinary.com/ashokacs/image/upload/v1605586021/banner1_alx8dx.png"
             alt="First slide"
-            style={{ height: "10%" }}
+            style={{ height: "10%"}}
           />
         </Carousel.Item>
 

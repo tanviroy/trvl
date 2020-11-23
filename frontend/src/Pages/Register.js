@@ -32,36 +32,56 @@ export default function Register() {
 
   
   return (
+
+    <div>
+
+    <div className="header">
+      <NavbarComp />
+    </div>
+      
     <div className="login">
-      <div className="header">
-          <NavbarComp />
-        </div>
+
       <div>
-        <h1>Register Now!</h1>
+
+        <br />
+
+        <h1 style={{fontSize: "4rem"}}>Register Now! ⚓</h1><br />
+
         <input
           placeholder="Name"
           onChange={(e) => setRegisterUsername(e.target.value)}
+          className="input-box"
         />
         <br />
+
         <input
           placeholder="Mobile Number"
           onChange={(e) => setRegisterMobile(e.target.value)}
+          className="input-box"
         />
         <br />
+
         <input
           placeholder="Email ID"
           onChange={(e) => setRegisterEmail(e.target.value)}
+          className="input-box"
         />
         <br />
+
         <input
           placeholder="Password"
           type="password"
           onChange={(e) => setRegisterPassword(e.target.value)}
+          className="input-box"
         />
-        <br />
+        <br /><br />
+
         <button onClick={register}>Submit</button>
+
       </div>
       <br /><br />
+
+    </div>
 
     </div>
   );

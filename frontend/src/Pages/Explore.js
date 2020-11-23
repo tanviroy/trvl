@@ -73,7 +73,7 @@ class Explore extends Component {
         return b.rating[0] - a.rating[0];
       });
     }
-    await this.setState({ hotels: list });
+    this.setState({ hotels: list });
 
   }
 

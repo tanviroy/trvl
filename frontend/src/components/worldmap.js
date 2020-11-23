@@ -4,7 +4,6 @@
 import React, { Component } from "react";
 import "../App.css";
 import "../styles/textoverimage.css";
-import "../styles/Switch.css"
 import {Link} from 'react-router-dom'
 import NavbarComp from "./navbar";
 import Image from 'react-bootstrap/Image'
@@ -34,7 +33,7 @@ export default function Worldmap() {
     latitude: 41.8719,
     longitude: 12.5674,
     width: "40vw",
-    height: "35vh",
+    height: "45vh",
     zoom: 0.5
   });
 

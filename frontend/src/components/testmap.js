@@ -4,7 +4,6 @@
 import React, { Component } from "react";
 import "../App.css";
 import "../styles/textoverimage.css";
-import "../styles/Switch.css"
 import {Link} from 'react-router-dom'
 import NavbarComp from "./navbar";
 import Image from 'react-bootstrap/Image'
