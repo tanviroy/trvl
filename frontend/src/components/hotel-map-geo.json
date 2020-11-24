@@ -1,0 +1,1109 @@
+{
+  "type": "FeatureCollection",
+  "crs": {
+    "type": "name",
+    "properties": { "name": "urn:ogc:def:crs:OGC:1.3:CRS84" }
+  },
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {
+        "NAME": "HOTEL MARTINO AI MONTI SINGLE ROOM"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [41.890560, 12.494270]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "NAME": "Wonderful Home with Balcony Close to Colosseo!"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [41.990560, 12.694270]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "NAME": "Studio indipendente con bagno privato a Roma!"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [41.890560, 12.594270]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "NAME": "Napoleon's Boutique"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [41.890560, 13.594270]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "NAME": "Cozy 1bdr in the heart of Milan,Porta Romana 80202"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [46.993389, 9.512980]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "NAME": "Poggibonsi/294"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [45.657581, 9.963600]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "NAME": "Silenzioso trilo in zona DUOMO!3181"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [45.461880, 9.286750]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "NAME": "Vivacious 1bdr in the heart of Milan! 80199"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [45.561880, 9.286750]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "NAME": "Moderno bilocale con balcone e WiFi! 2204"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [45.461880, 9.186750]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "NAME": "TORINO MONOLOCALE AL BALON"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [45.068370, 7.683070]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "NAME": "Torino, offro intero bilocale"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [45.088370, 7.583070]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "NAME": "La Matinera Apartment"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [45.017210, 7.750370]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "NAME": "New City Center Duomo"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [45.078370, 7.693070]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "NAME": "MONOLOCALE TORINO CENTRO"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [45.089370, 7.676070]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "NAME": "Delightful two-room apartament near center of Rome"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [41.890560, 12.594270]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "NAME": "EUR APARTMENT"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [41.880560, 12.794270]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "NAME": "Luminosa singola con bagno privato vicino metro A"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [41.870560, 12.494270]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "NAME": "Splendido attico con terrazza panoramica su Roma"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [41.806200, 12.680430]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "NAME": "Appartamento coppie/gruppi a Lido Di Ostia"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [41.730840, 12.280810]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "NAME": "Apartment with Garden Ostiense"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [41.806200, 12.380430]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "NAME": "Colosseum Cantoni Apartment 4 Guests"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [41.805200, 12.470430]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "NAME": "Mini appartamento La Riserva 150 metri dal mare"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [41.4856021,12.6091204]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "NAME": "Mamma Roma"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [41.7109269,12.9459863]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "NAME": "Green in Rome"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [41.9102415,12.3959128]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "NAME": "Cozy Casetta a Centocelle"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [41.8963788,12.1943029]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "NAME": "Nel verde vicino al centro con angolo cottura"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [41.883924,12.5357793]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "NAME": "Room in Fiumicino: apartment in Fiumicino"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [41.7892733,12.2030224]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "NAME": "LUX CHARMING PENTHOUSE - PIAZZA NAVONA - NEW!!!"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [41.8991673,12.4708855]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "NAME": "DECO'S PLACE ROMA ZOE - COLOSSEO APARTEMENT"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [41.8902142,12.4900422]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "NAME": "Love Room Fiumicino: Room for two people."
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [41.7872873,12.2260552]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "NAME": "Wonderful modern apartment, with seasonal pool."
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [41.7972873,12.3260552]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "NAME": "Noble Suite"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [41.9041638,12.4980654]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "NAME": "Casa Umberto I"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [40.6720939,14.7778614]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "NAME": "Chambre privée 10m² chez l'habitant - Métro 7"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [48.8125219,2.3696739]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "NAME": "Delightful studio for two in Marais 82768"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [48.8593315,2.3511447]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "NAME": "A quiet room near Paris"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [48.8325219,2.3796739]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "NAME": "Chambre en plein cœur de Paris"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [48.8255219,2.3896739]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "NAME": "Grande chambre calme face jardinet dans Maison"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [48.7893091,2.360048]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "NAME": "Joli studio meublé tout confort trouville sur mer"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [49.3726531,0.0861044]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "NAME": "Deauville 42m2-Hypercentre-2 pièces-Résidence VIP"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [49.3539675,0.0575725]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "NAME": "Appart Deauville-Villers 4 pers 100 m de la plage"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [49.3539675,0.0575725]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "NAME": "Lumière à Trouville, charmant petit studio !"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [49.3836531,0.0873044]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "NAME": "Logement entre plage et lac"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [49.3559675,0.0585725]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "NAME": "Location d'été. Belle appartement, espace verts."
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [47.2062518,-1.5197726]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "NAME": "Grande chambre avec salle de bain privative"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [47.2246615,-1.665563]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "NAME": "T1 en PROMO sur NANTES / SAINT-HERBLAIN"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [47.2346615,-1.655563]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "NAME": "Studio proche centre-ville quartier agréable"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [47.2383172,-1.6300961]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "NAME": "Maison de ville à Rezé"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [47.173388,-1.592278]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "NAME": "Chambre à louer à Hendaye"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [43.363562,-1.7976586]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "NAME": "Studio neuf avec clim proche centre, gare (wifi)"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [43.929047,2.0972809]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "NAME": "Beaumont : Maison idéale sejour court auvergne"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [45.7500786,3.0678118]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "NAME": "Chambres aux portes de Guéret"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [46.158331,1.8004449]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "NAME": "Studio de standing dans les parcs de Vichy"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [46.1322741,3.3904325]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "NAME": "Gite Océania proche St Jean de Monts, piscine chau"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [46.8088706,-2.0362525]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "NAME": "À la découverte de l’Auvergne &"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [45.787119,3.0777065]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "NAME": "Chambre cosy pour 1 ou 2 pers dans maison ancienne"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [44.8030306,-0.5660106]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "NAME": "Coup de cœur pour ce studio « le chat l’heureux »"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [44.8030306,-0.5660106]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "NAME": "Coup de cœur pour ce studio « le chat l’heureux »"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [42.6991559,2.8344614]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "NAME": "1er - Joli studio, tout confort, idéalement situé"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [45.7741621,3.0426264]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "NAME": "Appartement proche toutes commodités"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [45.2686035,1.731302]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "NAME": "Belle chambre proche Paris"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [48.7678375,2.3331419]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "NAME": "Cheap Loft in Tlatelolco - Internet - Distancing"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [19.3910038,-99.2837]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "NAME": "Conviniently located apartment in Roma Sur"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [19.3930038,-99.2937]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "NAME": "Workshop & Studio near to everything in Condesa"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [19.3960038,-99.2947]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "NAME": "Lomas de ahutlan"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [18.9570092,-99.2711362]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "NAME": "Habitación fresca!"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [18.8962099,-99.2185012]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "NAME": "Master Room B03 on 5th Av 10 &12"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [20.6539385,-87.1417372]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "NAME": "Brand new luxury studio The Gallery1 Condos"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [20.6639385,-87.1517372]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "NAME": "Bonito Estudio a unos pasos de la Playa"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [20.6439385,-87.1337372]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "NAME": "Habitacion hotelera en Casa Mexicana Melaque"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [19.2235992,-104.7128598]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "NAME": "Confortable y cálido departamento Serca AIT."
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [19.3115553,-99.5798685]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "NAME": "Bello espacio en Centro Zacatecas todo caminando"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [23.0727572,-104.7923651]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "NAME": "Real Estudio"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [22.2784252,-97.8565374]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "NAME": "Cosy apartment 10 min from downtown"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [22.1128637,-101.0261102]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "NAME": "Casa en coto privado y tranquilo"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [21.8858792,-102.3613403]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "NAME": "Acogedora casa al sur de Aguascalientes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [21.8898792,-102.3633403]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "NAME": "Privado, independiente y céntrico"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [21.7792996,-101.9745038]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "NAME": "Hermoso espacio en centro histórico Zacatecas!"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [22.7748003,-102.5790593]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "NAME": "💛💛Bonita Habitación💛💛 trabajo o estudio P305"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [19.6702224,-99.1740005]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "NAME": "Alojamiento cercano al metro Tláhuac #2"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [19.391323,-99.1356045]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "NAME": "Cómoda habitación cerca del centro de Zacatecas"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [23.2828154,-102.8378764]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "NAME": "Oneness Stay 101,Ten mins from CP, Bus Stand, Rail"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [28.6289206,77.2065322]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "NAME": "Service Apartment , Hotel , Home stay, Room villa"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [19.9911106,73.7334401]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "NAME": "Apartment with a view & sports area"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [28.4023719,77.1789876]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "NAME": "Entire 1BHK flat for a comfort stay in HSR layout"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [12.9542946,77.4908518]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "NAME": "Maison d’hôte"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [12.9798083,80.1997499]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "NAME": "friendly couples"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [17.2445169,78.3911724]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "NAME": "Krishna Vihar 1BHK"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [19.0166239,72.8930738]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "NAME": "Roys Home 2kms from Airport with AC and WIFI"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [22.6763858,88.0495312]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "NAME": "Casita Near South Mountain"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [33.3763747,-112.0521043]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "NAME": "South mountain home with a view"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [33.3779664,-112.0490617]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "NAME": "Comfortable Bedroom w/ 65’ TV"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [33.3957079,-111.8778447]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "NAME": "Great Apartment in Central Austin"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [30.283411,-97.804257]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "NAME": "Bedroom 2 with shared bathroom"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [30.293411,-97.814257]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "NAME": "Caramel Circle Character"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [35.1955793,-85.1772108]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "NAME": "Ringgold home with views"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [34.9114073,-85.1771685]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "NAME": "1HappyHome"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [34.9314073,-85.1781685]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "NAME": "ALL CXL"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [36.6477332,-93.3330729]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "NAME": "Bienvenidos"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [36.6387332,-93.3450729]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "NAME": "Rositas home new area semi private # 7"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [29.4817349,-98.7945995]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "NAME": "Brand New Unit in the Heart of Silicon Valley"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [37.425713,-122.1703695]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "NAME": "Beautiful home near Southpoint!"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [36.0020232,-79.0249969]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "NAME": "Odogbolu Townhouse 🏠"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [36.0050232,-79.0349969]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "NAME": "Homey 19 Acre Homestead Room for Rent"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [29.2861182,-95.7584911]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "NAME": "Affordable Modern BR in Central Houston Location!"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [29.8174782,-95.6814864]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "NAME": "➡FULL FURNISHED PRIVATE ROOM IN BETHEL PARK"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [40.3232792,-80.0703419]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "NAME": "Cozy Cutie"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [29.8314772,-95.4830459]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "NAME": "Beautiful Studio with independent entrance"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [26.0291269,-97.5991828]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "NAME": "Buchanan Heights Unit #201-New Townhomes-Downtown!"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [30.2038913,-92.0763372]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "NAME": "Studio cosy centre ville Bordeaux"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [44.8638282,-0.6561811]
+      }
+    }
+  ]
+}
