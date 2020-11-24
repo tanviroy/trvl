@@ -7,25 +7,22 @@ import './App.css';
 
 import Home from "./Pages/Home";
 import Explore from "./Pages/Explore";
-import Flight from "./Pages/Flight";
 import Hotel from "./Pages/Hotel";
-import Cars from "./Pages/Cars";
 import Register from "./Pages/Register";
 import Login from "./Pages/Login";
 import Profile from "./Pages/Profile";
-import AddHotel from "./Pages/addhotel";
+import AddHotel from "./Pages/AddHotel";
 import FooterComp from "./components/footer";
 import AboutUs from "./Pages/AboutUs";
 import TermsandConditions from "./Pages/T&C";
-import testmap from "./components/testmap";
+//import testmap from "./components/testmap";
 
 function App() {
   return (
     <BrowserRouter>
 
         <Route path="/" exact component={Home} />
-        <Route path="/explore-trvl" exact component={Explore} />
-        <Route path="/flight" exact component={Flight} />
+        <Route path="/explore" exact component={Explore} />
         <Route path="/hotel/" component={Hotel} />
         <Route path="/register" component={Register} />
         <Route path="/login" component={Login} />
@@ -33,7 +30,6 @@ function App() {
         <Route path="/addhotel" exact component={AddHotel} />
         <Route path="/about-us" exact component={AboutUs} />
         <Route path="/terms-and-conditions" exact component={TermsandConditions} />
-        <Route path="/cars" exact component={Cars} />
         {/* <Route path="/testmap" exact component={testmap} /> */}
 
         <FooterComp />

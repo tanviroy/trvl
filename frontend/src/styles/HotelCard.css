@@ -8,25 +8,24 @@
   padding-bottom: 3%;
 }
 
-.hotelcard-container::-webkit-scrollbar{
-width: 18px;
-border-radius: 20px;
+.hotelcard-container::-webkit-scrollbar {
+  width: 18px;
+  border-radius: 20px;
 }
 
-.hotelcard-container::-webkit-scrollbar-track{
-background:#003060;
-border-radius: 20px;
+.hotelcard-container::-webkit-scrollbar-track {
+  background: #003060;
+  border-radius: 20px;
 }
 
-.hotelcard-container::-webkit-scrollbar-thumb{
-width: 24px;
-background: #003060;
-border: 5px solid white;
-border-radius: 15px;
+.hotelcard-container::-webkit-scrollbar-thumb {
+  width: 24px;
+  background: #003060;
+  border: 5px solid white;
+  border-radius: 15px;
 }
 
-
-.hotelcard-items{
+.hotelcard-items {
   margin: 2%;
 }
 

@@ -20,11 +20,9 @@ const HotelsComp = ({ hotels, datefrom, dateto, selectHotel }) => {
                       src={hotel.imageurl}
                       alt="hotel"
                     />
-     
-            
-               
+
                 <div className="right3">
-                <Link to={"/hotel/" + hotel._id +"/"+datefrom.toString()+"/"+dateto.toString()}><div className="hotel-name">
+                <Link to={"/hotel/" + hotel._id +"/"+datefrom.toString()+"/"+dateto.toString()}  target="_blank"><div className="hotel-name">
                   {hotel.name}
                 </div></Link>
 
@@ -32,8 +30,8 @@ const HotelsComp = ({ hotels, datefrom, dateto, selectHotel }) => {
                   {hotel.location}
                 </div>
 
-                <div className="hotel-price">${hotel.price}
-                <button className="flight-button" onClick={() => selectHotel(hotel.price, hotel._id)}>Select</button></div>
+                <div className="hotel-price">${hotel.price}<br/>
+                <button className="hotel-button" onClick={() => selectHotel(hotel.price, hotel._id)}>Select</button></div>
 
                 </div>
 

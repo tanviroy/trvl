@@ -236,7 +236,7 @@ app.get("/viewedhotels", (req, res) => {
     Hotel.find({}, (err,doc) => {
       if (!doc) res.send("No hotels in DB");
       if (doc){
-        res.send(doc.slice(1,6));
+        res.send(doc);
       }
     })
   }
@@ -352,6 +352,50 @@ app.post("/bookhotel", (req,res) =>{
   res.send("Sab changa si")
 })
 
+app.post("/book", (req,res) =>{
+  datefrom = req.body.datefrom.toString();
+  dateto = req.body.dateto.toString();
+  source = req.body.source,
+  destination = req.body.destination,
+  hotelId = req.body.hotelId,
+  hotelcost = req.body.hotelcost,
+  flightcost = req.body.flightcost,
+  carcost = req.body.carcost
+
+  if(!req.user){
+    res.send("User not logged in!")
+  }
+  else{
+    userID = req.user._id;
+  User.findOne({_id: userID}, (err,doc) =>{
+    if (err) throw err;
+    if (!doc) res.send("User doesn't exist")
+    if (doc){
+      newBooking = {  source: source, destination: destination, 
+                      dateto: dateto, datefrom: datefrom, 
+                      hotelId: hotelId, hotelcost: hotelcost, 
+                      carcost: carcost, flightcost: flightcost }
+      doc.booked.push(newBooking);
+      doc.save();
+    }
+  })
+
+  Hotel.findOne({_id: hotelId}, (err,doc) => {
+    if (err) throw err;
+    if (!doc) res.send("Hotel doesn't exist");
+    if (doc) {
+      doc.bookers.push(userID);
+      doc.save();
+    }
+
+  })
+  //console.log(hotelcost);
+  //console.log(hotelId);
+  res.send("Working, I hope ;-;")
+  }
+  
+})
+
 //========================================= 
 
 app.post("/addhotel", (req, res) => {
@@ -424,9 +468,11 @@ app.post("/addhotel", (req, res) => {
 app.get('/userstatus', (req, res) => {
   if (!req.user){
     res.send(false)
+    //console.log("Not logged in")
   }
   else{
     res.send(true)
+    //console.log("Logged in")
   }
 })
 

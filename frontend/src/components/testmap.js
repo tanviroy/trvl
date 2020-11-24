@@ -1,15 +1,15 @@
 // Map references:
 // https://github.com/leighhalliday/mapbox-react-demo/blob/master/src/App.js
 
-import React, { Component } from "react";
+import React from "react";
 import "../App.css";
 import "../styles/textoverimage.css";
-import {Link} from 'react-router-dom'
-import NavbarComp from "./navbar";
-import Image from 'react-bootstrap/Image'
+//import {Link} from 'react-router-dom'
+//import NavbarComp from "./navbar";
+//import Image from 'react-bootstrap/Image'
 // import { Map, Marker, GoogleApiWrapper } from "google-maps-react"
-import { useState, useEffect } from "react";
-import ReactMapGL, { Marker, Popup } from "react-map-gl";
+import { useState } from "react";
+import ReactMapGL from "react-map-gl";
 
 // please do not uncomment below code
 

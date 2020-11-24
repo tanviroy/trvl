@@ -33,6 +33,7 @@ class Profile extends Component {
         this.setState({ mobile: res.data.mobile,
           name: res.data.name,
           address: res.data.address});
+        console.log(res.data)
       }
       
     });

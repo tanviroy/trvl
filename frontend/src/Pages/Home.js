@@ -35,7 +35,7 @@ class Home extends Component {
 
     <section>
       <div className="banner">
-        <Link to="/explore-trvl" style={{padding: "0", margin: "0"}}>
+        <Link to="/explore" style={{padding: "0", margin: "0"}}>
           <button className="start-exploring">Start Exploring</button>
         </Link>
         <NavbarComp />

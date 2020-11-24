@@ -6,9 +6,9 @@ import "../styles/hotel.css";
 import NavbarComp from "../components/navbar";
 import Axios from "axios";
 // below line adds libraries needed for google map embedding
-// import { Map, Marker, GoogleApiWrapper } from "google-maps-react"
-import ReactMapGL, { Marker, Popup } from "react-map-gl";
-import { useState, useEffect } from "react";
+//import { Map, Marker, GoogleApiWrapper } from "google-maps-react"
+//import ReactMapGL, { Marker, Popup } from "react-map-gl";
+//import { useState, useEffect } from "react";
 import Map from "../components/testmap"
 
 
