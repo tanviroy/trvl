@@ -9,7 +9,7 @@ import Axios from "axios";
 //import { Map, Marker, GoogleApiWrapper } from "google-maps-react"
 //import ReactMapGL, { Marker, Popup } from "react-map-gl";
 //import { useState, useEffect } from "react";
-import Map from "../components/testmap"
+import Map from "../components/hotelmap"
 
 
 
@@ -108,7 +108,7 @@ class Hotel extends Component {
           <div><p style={{fontWeight: "600"}}>Hotel Amenities:</p>
             <ul>{hotel.amenities.map(name => <li style={{listStyleType: "disc"}} key={name}> {name} </li>)}</ul>
           </div><br />
-    <h2>{this.state.datefrom} to {this.state.dateto}</h2>
+          <h2>{this.state.datefrom} to {this.state.dateto}</h2>
 
           <br />
 
@@ -117,13 +117,11 @@ class Hotel extends Component {
           
          </div>
 
-         <div className="right4">
+         <div className="right">
            {/* <div className="Hotel">
            <Map google={this.props.google} />
            </div> */}
-         {/* ⚠️ Map goes here! */}
-         <Map />
-         
+          <Map />
          </div>
 
         </div>

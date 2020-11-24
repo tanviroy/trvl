@@ -4,6 +4,7 @@ import React, { useState } from "react";
 import NavbarComp from "../components/navbar";
 import Axios from "axios"; // for making http requests
 import "../App.css";
+import {Link} from 'react-router-dom'
 
 export default function Register() {
   const [registerUsername, setRegisterUsername] = useState("");
@@ -75,8 +76,9 @@ export default function Register() {
           className="input-box"
         />
         <br /><br />
-
+        <Link to='/login'> 
         <button onClick={register}>Submit</button>
+        </Link>
 
       </div>
       <br /><br />
