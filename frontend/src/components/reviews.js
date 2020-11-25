@@ -1,4 +1,3 @@
-
 import React from "react";
 import "../App.css";
 
@@ -9,7 +8,7 @@ const ReviewsComp = ({ hotels }) => {
       <div className="review-list-container">
 
         {hotels.map((hotel) => (
-          <div key={hotel.id}>
+          <div key={hotel._id}>
             {hotel.reviews.length === 0
             ? <div> There are no reviews for this hotel yet! </div>
             :
@@ -20,7 +19,7 @@ const ReviewsComp = ({ hotels }) => {
               </li>
             ))}
           </div>
-        ))}
+            ))}
       </div>
     </div>
   );

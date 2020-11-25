@@ -406,20 +406,12 @@ app.post("/addreview", (req, res) => {
       if (!doc) res.send("Hotel does not exist!");
       if (!req.user) res.send("Login to continue!");
       if (doc && req.user) {
-        if (req.user.orders.includes(req.body.hotelId)){
-          var newreview = {body: req.body.review, user: req.user.username, verified: "Y"};
-          doc.reviews.push(newreview);
-          await doc.save();
-          console.log(newreview)
-          res.send("New verified review added!");
-        }
-        else{
-          var newreview = {body: req.body.review, user: req.user.username, verified: "N"};
+          var newreview = {body: req.body.review, user: req.user.name, verified: "N"};
           doc.reviews.push(newreview);
           await doc.save();
           console.log(newreview)
           res.send("New review added!");
-        }
+
         
       }
     })
@@ -495,6 +487,37 @@ app.post("/addhotel", (req, res) => {
 });
 
 //=========================================
+
+app.get("/getbucketlist", (req, res) => {
+  if (!req.user) res.send([]);
+  if (req.user){
+    Hotel.find({_id : {$in: req.user.bucketlist}}, async (err, doc) =>{
+      if (err) throw err;
+      if (doc){
+        await res.send(doc);
+        console.log(doc)
+      }
+    });
+  }
+});
+
+app.get("/getbookedhotels", async(req, res) => {
+
+  if (!req.user) res.send([]);
+  if (req.user){
+    let hotels = [];
+    req.user.booked.map((booking) => (
+      Hotel.find({_id : booking.hotel_Id}, (err, doc) =>{
+        if (err) console.log(err);
+        if (doc){
+          hotels.push(doc)
+        }
+      })
+    ))
+        await res.send(hotels);
+        console.log(hotels)
+  }
+});
 
 app.get('/userstatus', (req, res) => {
   if (!req.user){

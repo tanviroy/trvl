@@ -17,7 +17,7 @@ class AboutUs extends Component {
     <section>
       <div className="banner">
         <NavbarComp />
-        <Image src="https://res.cloudinary.com/dzky4f4zb/image/upload/v1605612159/about-min_wseesp.png" fluid />
+        <Image src="https://res.cloudinary.com/dzky4f4zb/image/upload/v1605612159/about-min_wseesp.png" width="100%" />
 
         {/* <CarouselComp /> */}
       </div>
@@ -41,7 +41,7 @@ class AboutUs extends Component {
     <p>Keep Exploring!</p> 
 
     <center>
-    <Link to="/explore-trvl">
+    <Link to="/explore">
       <button className="extra-btn" onClick={this.updateNum}> Experience trvl</button>      
     </Link>
     </center>
