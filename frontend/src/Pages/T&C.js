@@ -18,7 +18,7 @@ class TermsandConditions extends Component {
     <section>
       <div className="banner">
         <NavbarComp />
-        <Image src="https://res.cloudinary.com/dzky4f4zb/image/upload/v1605796803/T_C_zmjhrq.png" fluid />
+        <Image src="https://res.cloudinary.com/dzky4f4zb/image/upload/v1605796803/T_C_zmjhrq.png" width="100%" />
 
         {/* <CarouselComp /> */}
       </div>
@@ -57,7 +57,7 @@ class TermsandConditions extends Component {
     <br/><br/><br/>
 
     <center>
-    <Link to="/explore-trvl">
+    <Link to="/explore">
       <button className="extra-btn" onClick={this.updateNum}> Book your next adventure!</button>      
     </Link>
     </center>

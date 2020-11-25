@@ -5,10 +5,15 @@ import NavbarComp from "../components/navbar";
 import Axios from "axios";
 import "../App.css";
 import Image from 'react-bootstrap/Image'
+import ProfileHotelsComp from "../components/profilehotels";
+//import BookingComp from "../components/booking";
+
 
 class Profile extends Component {
 
   state = {
+    bucketlistedhotels: [],
+    bookedhotels: [],
     address: "",
     name: "",
     mobile: 0,
@@ -31,10 +36,30 @@ class Profile extends Component {
       else{
         this.setState({ mobile: res.data.mobile,
           name: res.data.name,
-          address: res.data.address});
+          address: res.data.address,
+          booked: res.data.booked,
+          bucketlist: res.data.bucketlist,
+          visited: res.data.visited});
         console.log(res.data)
       }
       
+    });
+
+    Axios({
+      method: "GET",
+      withCredentials: true,
+      url: "http://localhost:5000/getbucketlist",
+    }).then((res) => {
+        this.setState({ bucketlistedhotels: res.data });
+    });
+
+    Axios({
+      method: "GET",
+      withCredentials: true,
+      url: "http://localhost:5000/getbookedhotels",
+    }).then((res) => {
+        this.setState({ bookedhotels: res.data });
+        console.log(res.data)
     });
 
   };
@@ -88,7 +113,7 @@ class Profile extends Component {
         <div>
           <div className="banner">
             <NavbarComp />
-            <Image src="https://res.cloudinary.com/dzky4f4zb/image/upload/v1605781624/Profile2_enzllk.png" fluid />  
+            <Image src="https://res.cloudinary.com/dzky4f4zb/image/upload/v1605781624/Profile2_enzllk.png"  width="100%"/>  
           </div>
 
           <section style={{backgroundColor: "#003060", padding: "2%", marginBottom: "-5%"}}>
@@ -112,6 +137,25 @@ class Profile extends Component {
             <center>
               <button className="logout" onClick={this.logout}> Logout</button>
             </center>
+
+            </div>
+          </section>
+
+          <section style={{backgroundColor: "#003060", padding: "2%", marginBottom: "-5%"}}>
+            <br/><br/><br/><br/>
+            <div className="login">
+            <h1><b>Your Bookings</b></h1>
+            {this.state.booked.map((booking) => (
+              <div key={booking._id}>
+                {booking.source} to {booking.destination} on {booking.dateto.toString()}
+              </div>
+            ))}
+            <br/>
+            <h1><b>Your Bucketlisted Hotels</b></h1>
+            <ProfileHotelsComp hotels={this.state.bucketlistedhotels}/>
+
+            <br/>
+      
 
             </div>
           </section>

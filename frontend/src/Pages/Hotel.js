@@ -21,11 +21,12 @@ class Hotel extends Component {
     newreview: "",
     datefrom: "",
     dateto: "",
+    mindate: new Date('2010-01-01'),
   };
 
   componentDidMount() {
     let url = window.location.pathname
-    console.log(url.split("/"))
+    //console.log(url.split("/"))
     this.setState({datefrom: url.split("/")[3] })
     this.setState({dateto: url.split("/")[4] })
 
@@ -36,7 +37,7 @@ class Hotel extends Component {
     }).then((res) => {  
       if (res.data){
         this.setState({hotels: res.data });
-        console.log(res.data);
+        console.log(this.state.hotels[0]);
       }
     });
   }
@@ -63,14 +64,13 @@ class Hotel extends Component {
   handleSubmit = async(e) => {
     e.preventDefault();
     let url = window.location.pathname
-    let productId = url.split("/")[2]
     //console.log(this.state.newreview);
     //console.log("New review be added");
     Axios({
       method: "POST",
       data: {
         review: this.state.newreview,
-        productId: productId,
+        hotelId: url.split("/")[2],
       },
       withCredentials: true,
       url: "http://localhost:5000/addreview",
@@ -135,7 +135,7 @@ class Hotel extends Component {
           <div><p style={{fontWeight: "600"}}>Hotel Amenities:</p>
             <ul>{hotel.amenities.map(name => <li style={{listStyleType: "disc"}} key={name}> {name} </li>)}</ul>
           </div><br />
-          <h2>{this.state.datefrom} to {this.state.dateto}</h2>
+          <h2>{ (this.state.datefrom.includes('%'))?"null":this.state.datefrom + " to " }{ (this.state.dateto.includes('%'))?"null":this.state.dateto}</h2>
 
           <br />
 
@@ -144,7 +144,7 @@ class Hotel extends Component {
 
           <h1>Product Reviews</h1>
             <center>
-              <ReviewsComp products={this.state.hotels} />
+              <ReviewsComp hotels={this.state.hotels} />
             </center>
 
             <h1 style={{marginTop: "3%"}}>Want to review this hotel?</h1>
@@ -157,7 +157,7 @@ class Hotel extends Component {
           
          </div>
 
-         <div className="right">
+         <div className="right4">
            {/* <div className="Hotel">
            <Map google={this.props.google} />
            </div> */}

@@ -178,7 +178,7 @@ class Explore extends Component {
 }
 
 handleBook = () => {
-    //this.setState({progress: this.state.progress+1});
+    this.setState({progress: this.state.progress+1});
 
     Axios({
       method: "GET",
@@ -320,9 +320,9 @@ handleBook = () => {
                 ? <div><h1>Select A Cab 🚕</h1><br />
                 <ProgressBar animated now={90} />
                 <CarsComp selectCar={this.selectCar}/></div>
-                : <div><h1>Booking Complete!</h1>
-                <ProgressBar animated now={100} />
-               </div>}
+                : <div><ProgressBar animated now={100} />
+                <img src="https://thumbs.gfycat.com/QuaintLikelyFlyingfish-size_restricted.gif" alt="Done"/>
+                <h1>Booking Complete!</h1></div>}
 
                <br />
               

@@ -20,21 +20,21 @@
   display: -ms-flexbox;
   display: -webkit-flex;
   display: flex;
-  padding-top: 0%;
   margin-top: -2%;
-  height: 100%;
+  height: auto;
 }
 
 .left4 {
   flex: 1;
-  width: auto;
+  width: 50rem;
   height: 100%;
   padding: 3%;
+  padding-left: 6%;
   font-size: large;
   text-align: left;
   height: 100% !important;
-  margin: 3%;
-  background-color: pink;
+  margin: 0%;
+  background-color: white;
 }
 
 .right4 {
@@ -43,7 +43,7 @@
   text-align: center;
   padding: 0%;
   font-size: large;
-  background-color: lightcoral;
+  background-color: white;
 }
 
 .circle {
