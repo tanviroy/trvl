@@ -1,3 +1,5 @@
+/* CSS FOR LOGIN AND REGISTER PAGES ONLY */
+
 .login {
     max-width: 60%;
     margin-left: auto;
@@ -44,5 +46,3 @@ label {
     font-size: medium !important;
     text-decoration: underline;
 }
-
-  

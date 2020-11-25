@@ -10,6 +10,7 @@ body::before {
   box-shadow: 0px 0 150px 100px rgba(0, 0, 0, 0.8);
   z-index: 100;
 }
+
 /* Banner for carousel */
 .banner {
   margin: 0%;
@@ -38,24 +39,54 @@ body::before {
   transform: translate(-50%, -50%);
 }
 
+/* Other Buttons */
 .otherbuttons {
   margin: 0;
   padding: 1rem;
   z-index: 0;
-  background: white;
-  opacity: 1;
+  background-color: #003060;
+  color: white;
   border-radius: 40px;
-  border-color: #ffffff;
+  border-color: #003060;
   margin-top: 5%;
-  /* left: 40%; */
   position: initial;
   width: auto;
-  font-size: small;
-  color: #000000;
-  box-shadow: 0px 0px 10px 0px #00000091;
+  font-size: medium;
 }
 
-/* Contact Us (L-info, R-map) */
+.extra-btn {
+  margin: 0;
+  padding: 1rem;
+  z-index: 0;
+  background-color: #003060;
+  color: white;
+  border-radius: 40px;
+  border-color: #003060;
+  margin-top: 5%;
+  position: initial;
+  width: 32rem;
+  font-size: x-large;
+}
+
+.logout{
+  margin: 0;
+  padding: 1rem;
+  z-index: 0;
+  background-color: #003060;
+  color: white;
+  border-radius: 40px;
+  border-color: #003060;
+  margin-top: 5%;
+  position: initial;
+  width: 15rem;
+  font-size: large;
+}
+
+.otherbuttons:hover, .logout:hover, .extra-btn:hover {
+  box-shadow: 0 5px 5px 0 rgba(0, 0, 0, 0.4);
+}
+
+/* Contact Us Box(L-info, R-map) */
 .container {
   display: -webkit-box;
   display: -moz-box;
@@ -79,14 +110,6 @@ body::before {
   margin: 0;
   padding: 0;
   height: 100%;
-}
-
-.right2 {
-  flex: 7;
-  height: auto;
-  padding: 8%;
-  font-size: large;
-  background-color: rgb(255, 255, 255);
 }
 
 .text_1 {

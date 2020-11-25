@@ -2,7 +2,7 @@
 
 import React, { useState } from "react";
 import NavbarComp from "../components/navbar";
-import Axios from "axios"; // for making http requests
+import Axios from "axios"; // For making http requests
 import "../App.css";
 import {Link} from 'react-router-dom'
 

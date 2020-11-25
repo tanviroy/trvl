@@ -1,30 +1,57 @@
+/* Flight Results on Explore Page */
+
+.flight-deets-box{
+  align-content: flex-start;
+  text-align: left;
+}
+
+.flight-deets {
+  list-style-type: disc;
+  font-size: medium;
+}
+
 .flight-name {
   color: black;
-  font-size: large;
+  font-size: medium;
   text-align: left;
+}
+
+.flight-logo {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  object-fit: fill;
+  padding: 0%;
 }
 
 .flight-price {
   text-align: right;
+  font-size: medium;
+  padding: 0;
 }
 
 .flight-container {
   display: flex;
-  padding: 5%;
   justify-content: space-evenly;
   width: auto;
+  padding: 2%;
+  font-size: medium;
 }
 
 .flight-button {
   display: block;
-  padding: 5%;
+  padding: 7%;
   border-radius: 20px;
-  background-color: white;
+  background-color: #003060;
+  color: white;
+  border-color:  #003060;
+  border: none;
+  text-decoration: none;
+  font-size: medium;
+  display: inline-block;
+  cursor: pointer;
 }
 
 .flight-button:hover {
-  display: block;
-  padding: 5%;
-  border-radius: 20px;
-  background-color: rgb(199, 199, 199);
+  box-shadow: 0 5px 5px 0 rgba(0, 0, 0, 0.4);
 }

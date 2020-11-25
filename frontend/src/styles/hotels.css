@@ -1,0 +1,38 @@
+/* Hotel Results on Explore Page*/
+
+.hotel-name,
+.hotel-location,
+.hotel-price {
+  color: black;
+  text-align: right;
+}
+
+.hotel-image {
+  flex: 1;
+  text-align: left;
+  max-height: 100%;
+  margin: 0;
+  padding: 0%;
+  width: 40%;
+  position: absolute;
+  border-radius: 20px 0px 0px 20px;
+}
+
+.hotel-button {
+  background-color: #003060;
+  color: white;
+  border-radius: 20px;
+  border: none;
+  margin-top: 5px;
+  padding: 1%;
+  text-decoration: none;
+  font-size: small;
+  display: inline-block;
+  cursor: pointer;
+}
+
+.hotel-button:hover {
+  box-shadow: 0 5px 5px 0 rgba(0, 0, 0, 0.4);
+}
+
+

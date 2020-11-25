@@ -5,7 +5,6 @@ import NavbarComp from "../components/navbar";
 import Axios from "axios";
 import "../App.css";
 import Image from 'react-bootstrap/Image'
-import "../styles/Home.css";
 
 class Profile extends Component {
 
@@ -61,6 +60,7 @@ class Profile extends Component {
         withCredentials: true,
         url: "http://localhost:5000/update/number",
       }).then((res) => console.log(res));
+      window.location.reload(false);
     };
   
     updateAdd = () => {
@@ -72,6 +72,7 @@ class Profile extends Component {
         withCredentials: true,
         url: "http://localhost:5000/update/address",
       }).then((res) => console.log(res));
+      window.location.reload(false);
     };
   
     handleNumChange = async(e) => {
@@ -90,25 +91,29 @@ class Profile extends Component {
             <Image src="https://res.cloudinary.com/dzky4f4zb/image/upload/v1605781624/Profile2_enzllk.png" fluid />  
           </div>
 
-          <section>
+          <section style={{backgroundColor: "#003060", padding: "2%", marginBottom: "-5%"}}>
             <br/><br/><br/><br/>
-            <h1>Welcome user <b>{this.state.name}</b>!</h1>
-            {/* <button className="start-exploring" onClick={this.logout}>Logout</button> */}
-            <h3>Registered Mobile number: <b>{this.state.mobile}</b> Delivery Address: <b>{this.state.address}</b></h3>
+            <div className="login">
+            <h1>Welcome <b>{this.state.name}</b>! 🌎</h1>
+      
+            <h3>Registered Mobile number: <b>{this.state.mobile}</b> Registered Address: <b>{this.state.address}</b></h3>
             <br></br>
-            <h4> If you would like to update your number: <input type="text" onChange={this.handleNumChange}/>
-            {/* <button onClick={this.updateNum}> Update Mobile </button> */}
-            <button className="otherbuttons"onClick={this.updateNum}> Update Mobile</button>
+            <h4> Update your number 📞: &nbsp;<input className="input-box" type="text" onChange={this.handleNumChange}/>
+            &nbsp; &nbsp;
+            <button className="otherbuttons" onClick={this.updateNum}> Update Mobile</button>
             </h4> 
-            <h4> If you would like to update your address: <input type="text" onChange={this.handleAddChange}/>
-            {/* <button onClick={this.updateAdd}> Update Address </button>  */}
-            <button className="otherbuttons"onClick={this.updateAdd}> Update address</button>
+            <h4> Update your address 🏡: &nbsp;<input className="input-box" type="text" onChange={this.handleAddChange}/>
+            &nbsp; &nbsp;
+            <button className="otherbuttons" onClick={this.updateAdd}> Update address</button>
             </h4>
 
-            <center>
-              <button onClick={this.logout}> Logout</button>
+            <br />
 
+            <center>
+              <button className="logout" onClick={this.logout}> Logout</button>
             </center>
+
+            </div>
           </section>
 
         </div>

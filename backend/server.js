@@ -396,6 +396,37 @@ app.post("/book", (req,res) =>{
   
 })
 
+app.post("/addreview", (req, res) => {
+  if(!req.user){
+    res.send("Please login first!");
+  }
+  else{
+    Hotel.findOne({ _id: req.body.hotelId}, async (err, doc) => {
+      if (err) throw err;
+      if (!doc) res.send("Hotel does not exist!");
+      if (!req.user) res.send("Login to continue!");
+      if (doc && req.user) {
+        if (req.user.orders.includes(req.body.hotelId)){
+          var newreview = {body: req.body.review, user: req.user.username, verified: "Y"};
+          doc.reviews.push(newreview);
+          await doc.save();
+          console.log(newreview)
+          res.send("New verified review added!");
+        }
+        else{
+          var newreview = {body: req.body.review, user: req.user.username, verified: "N"};
+          doc.reviews.push(newreview);
+          await doc.save();
+          console.log(newreview)
+          res.send("New review added!");
+        }
+        
+      }
+    })
+  }
+
+});
+
 //========================================= 
 
 app.post("/addhotel", (req, res) => {

@@ -31,20 +31,20 @@ class AboutUs extends Component {
     <p style={{textAlign: "left", fontSize: "large"}}>
     
 
-    <br/><br/><br/><br/>
-    <h2>Helping your trvl</h2> 
+    <br/><br/>
+    <h1>Helping your trvl</h1><br/>
     At trvl we love to help people find their perfect destination. We love creating connections between people and places, and enable thousands of travelers to have unique experiences every moment. Our company was created from a desire to help people find a sense of home in new environments. Our business works by connecting travelers to hosts, 182 countries and 90,000 destinations. Since since our inception in 2018, we have become synonymous with international hospitality, and pioneers in the travel industry. Our services are powered by technology, strong teamwork, and round the clock customer support. With more and more of the world coming online, more people look to online services to book vacations, business trips and adventures.
     <br/><br/><br/>
 
 
-
-    <h2> <div></div></h2> 
-
-    <br/><br/><br/>
+    <br/>
     <p>Keep Exploring!</p> 
+
+    <center>
     <Link to="/explore-trvl">
-      <button className="otherbuttons"onClick={this.updateNum}> Check out our fabulous venues</button>      
+      <button className="extra-btn" onClick={this.updateNum}> Experience trvl</button>      
     </Link>
+    </center>
 
     <br/><br/><br/>
 

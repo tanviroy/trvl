@@ -8,21 +8,20 @@ const CarsComp = ({ selectCar }) => {
     return (
       <div>
 
-
               <div className="card">
 
                     <img
                       className="hotel-image"
-                      src="https://assets.newatlas.com/dims4/default/bcf6274/2147483647/strip/true/crop/1620x1080+150+0/resize/1200x800!/quality/90/?url=http%3A%2F%2Fnewatlas-brightspot.s3.amazonaws.com%2Farchive%2Foriginal-bond-goldfinger-aston-martin-db5-auction-8.jpg"
+                      src="https://www.hdwallpapers.in/download/black_volkswagen_golf_gtd_2020_4k_5k_hd_cars-HD.jpg"
                       alt="hotel"
                     />
                
                 <div className="right3">
                 <div className="hotel-name">
-                  <b>Vintage Luxury</b>
+                  <b>Economy</b>
                 </div>
 
-                <div className="hotel-price"> Starting at $877 per day <br/>
+                <div className="hotel-price"> Starting at $89 per day <br/>
                 <button className="hotel-button" onClick={() => selectCar(877)}>Select</button></div>
 
                 </div>
@@ -62,7 +61,7 @@ const CarsComp = ({ selectCar }) => {
                   <b>Family</b>
                 </div>
 
-                <div className="hotel-price">$50 per day <br/>
+                <div className="hotel-price">$150 per day <br/>
                 <button className="hotel-button" onClick={() => selectCar(50)}>Select</button></div>
 
                 </div>
@@ -82,7 +81,7 @@ const CarsComp = ({ selectCar }) => {
                   <b>Off-Road 4WD</b>
                 </div>
 
-                <div className="hotel-price">Starting at $100 per day <br/>
+                <div className="hotel-price">Starting at $200 per day <br/>
                 <button className="hotel-button" onClick={() => selectCar(100)}>Select</button></div>
 
                 </div>

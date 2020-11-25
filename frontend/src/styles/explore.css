@@ -54,7 +54,7 @@ select {
 
 .dates {
   display: flex !important;
-  flex: 2 0 0% !important;
+  flex: 2.25 0 0% !important;
   min-width: 0px !important;
   position: relative !important;
   align-items: center !important;
@@ -116,7 +116,7 @@ select {
   height: 32px !important;
 }
 
-/* Hotel Results (L-Filters and Sorts, R-Results) */
+/* Explore Page Container (L-Filters and Summary, R-Results) */
 .container2 {
   display: -webkit-box;
   display: -moz-box;
@@ -128,6 +128,7 @@ select {
   flex-direction: row;
 }
 
+/* Filters and Summary */
 .left2 {
   display: -webkit-box;
   display: -moz-box;
@@ -135,35 +136,26 @@ select {
   display: -webkit-flex;
   display: flex;
   flex-direction: column;
-  flex: 1;
+  flex: 2;
   width: auto;
   height: 100%;
-  padding: 10%;
+  padding: 3%;
   font-size: large;
   text-align: center;
-  box-shadow: 0 0 10px 10px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 0 8px 8px rgba(0, 0, 0, 0.2);
   border-radius: 20px;
   transition: 0.3s;
   height: 100% !important;
   margin: 3%;
 }
 
-.left2:hover {
-  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.4);
-}
-
+/* Results */
 .right2 {
-  flex: 7;
+  flex: 6;
   height: auto;
   padding: 3%;
   font-size: large;
   background-color: rgb(255, 255, 255);
-}
-
-.right3 {
-  padding: 5%;
-  background-color: rgb(255, 255, 255);
-  border-radius: 30px;
 }
 
 .card {
@@ -175,7 +167,7 @@ select {
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
   border-radius: 20px;
   transition: 0.3s;
-  height: 20rem !important;
+  height: 90% !important;
   margin: 3%;
   margin-left: 0;
   padding: 0%;
@@ -185,45 +177,19 @@ select {
   box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.4);
 }
 
-.hotel-name,
-.hotel-location,
-.hotel-price {
-  color: black;
-  text-align: right;
+/* To ensure info stays on the RHS of the card */
+.right3 {
+  padding-right: 5%;
+  padding: 2%;
+  background-color: rgb(255, 255, 255);
+  border-radius: 30px;
 }
 
-.hotel-image {
-  flex: 1;
-  text-align: left;
-  max-height: 100%;
-  margin: 0;
-  padding: 0%;
-  width: 40%;
-  position: absolute;
-  border-radius: 20px 0px 0px 20px;
-}
-
-.hotel-button {
-  background-color: white;
-  border-radius: 20px;
-  border: none;
-  margin-top: 5px;
-  padding: 1%;
-  text-decoration: none;
-  font-size: small;
-  display: inline-block;
-  cursor: pointer;
-  box-shadow: 0px 0px 15px 5px rgba(0, 0, 0, 0.15),
-    0px 3px 8px rgba(0, 0, 0, 0.1) !important;
-}
-
-.hotel-button:hover {
-  background-color: rgb(4, 32, 104);
-  color: white;
-}
-
+/* Proceed / Go Back buttons */
 .proceed-button {
-  background-color: white;
+  background-color: #003060;
+  color: white;
+  font-weight: bold;
   border-radius: 20px;
   border: none;
   margin-top: 15%;
@@ -231,6 +197,8 @@ select {
   text-decoration: none;
   display: inline-block;
   cursor: pointer;
-  box-shadow: 0px 0px 15px 5px rgba(0, 0, 0, 0.15),
-    0px 3px 8px rgba(0, 0, 0, 0.1) !important;
+}
+
+.proceed-button:hover {
+  box-shadow: 0 10px 10px 0 rgba(0, 0, 0, 0.4);
 }

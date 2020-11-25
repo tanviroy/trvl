@@ -11,7 +11,7 @@ import Hotel from "./Pages/Hotel";
 import Register from "./Pages/Register";
 import Login from "./Pages/Login";
 import Profile from "./Pages/Profile";
-import AddHotel from "./Pages/addhotel";
+import AddHotel from "./Pages/AddHotel";
 import FooterComp from "./components/footer";
 import AboutUs from "./Pages/AboutUs";
 import TermsandConditions from "./Pages/T&C";

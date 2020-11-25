@@ -56,9 +56,11 @@ class TermsandConditions extends Component {
     Customers also agree to immediately notify trvl of unauthorized use, breaches or attacks on their accounts and ensure that they take appropriate security measures in the event of such circumstances.
     <br/><br/><br/>
 
+    <center>
     <Link to="/explore-trvl">
-      <button className="otherbuttons"onClick={this.updateNum}> Book your next adventure</button>      
+      <button className="extra-btn" onClick={this.updateNum}> Book your next adventure!</button>      
     </Link>
+    </center>
 
     <br/><br/><br/>
 

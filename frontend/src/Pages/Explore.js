@@ -220,7 +220,9 @@ handleBook = () => {
 
         <div className="search">
         <form action="#">
+
           <div className="search1" data-panel-bounds="true">
+
             <div className="destination">
               <div className="search-input">
                 <Typeahead
@@ -231,7 +233,9 @@ handleBook = () => {
                 />
               </div>
             </div>
+
           <div className="separator"></div>
+
           <div className="destination">
               <div className="search-input">
                 <Typeahead
@@ -242,21 +246,25 @@ handleBook = () => {
                 />
               </div>
             </div>
+
           <div className="separator"></div>
           
-
           <div className="dates">
+
             <div className="checkin">
               <div className="search-input">
                 <input type = "date" name = "From" placeholder = "From"  onChange={this.handleDateFromChange}/>
               </div>
             </div>
+
             <div className="separator"></div>
+
             <div className="checkout">
               <div className="search-input">
                 <input type = "date" name = "To" placeholder = "To"  onChange={this.handleDateToChange}/>
               </div>
             </div>
+
           </div>
 
           <div className="button-container">
@@ -269,6 +277,7 @@ handleBook = () => {
         </div>
 
         <div className="container2">
+
           <div className="left2">
             {this.state.progress === 2
             ?<select onChange = {this.handleSortChange} name="sortselect" id="sortselect">
@@ -277,43 +286,45 @@ handleBook = () => {
             <option value="p-desc">Price (Descending)</option>
           </select>
             : null}
-            
-
-                <hr/>
-
+            <br />
+            <hr/>
             Flight Price: {this.state.flightPrice}<br/>
             Hotel Price: {this.state.hotelPrice} x {this.state.days} nights<br/>
             Car Price: {this.state.carPrice} x {this.state.days} days<br/>
             <hr/>
+
             <b>Subtotal: </b>{(parseFloat(this.state.flightPrice) + parseFloat(this.state.hotelPrice)*parseInt(this.state.days) + parseFloat(this.state.carPrice)*parseInt(this.state.days))}<br/>
             {this.state.progress<3?
-            <button className="proceed-button" onClick={this.handleProceed}>Proceed</button>:null}
+            <button className="proceed-button" onClick={this.handleProceed}>Proceed ➡</button>:null}
             {this.state.progress===1?
-            null:<button className="proceed-button" onClick={this.handleBackProceed}>Go Back</button>}
+            null:<button className="proceed-button" onClick={this.handleBackProceed}>Go Back ⬅</button>}
             {this.state.progress===3?
             <button className="proceed-button" onClick={this.handleBook}>Book!</button>:null}
             
           </div>
           
+          <br />
 
 
           <div className="right2">
 
               {this.state.progress === 1
-                ? <div><h2>Select Flights</h2>
-                <ProgressBar animated variant="success" now={30} />
+                ? <div><h1>Select A Flight ✈️</h1><br />
+                <ProgressBar animated now={30} />
                 <FlightsComp flights={this.state.flights} selectFlight={this.selectFlight}/></div>
                 : this.state.progress === 2 
-                ?<div><h2>Select Hotels</h2>
-                <ProgressBar animated variant="success" now={60} />
+                ?<div><h1>Select A Hotel 🏡</h1><br />
+                <ProgressBar animated now={60} />
                 <HotelsComp hotels={this.state.hotels} datefrom={this.state.datefrom} dateto={this.state.dateto}  selectHotel={this.selectHotel}/></div>
                 : this.state.progress === 3
-                ? <div><h2>Select Cars</h2>
-                <ProgressBar animated variant="success" now={90} />
+                ? <div><h1>Select A Cab 🚕</h1><br />
+                <ProgressBar animated now={90} />
                 <CarsComp selectCar={this.selectCar}/></div>
-                : <div><h2>Booking Complete!</h2>
-                <ProgressBar animated variant="success" now={100} />
+                : <div><h1>Booking Complete!</h1>
+                <ProgressBar animated now={100} />
                </div>}
+
+               <br />
               
           </div>
         </div>

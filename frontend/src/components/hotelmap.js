@@ -4,10 +4,6 @@
 import React, {useState} from "react";
 import "../App.css";
 import "../styles/textoverimage.css";
-//import {Link} from 'react-router-dom'
-//import NavbarComp from "./navbar";
-//import Image from 'react-bootstrap/Image'
-// import { Map, Marker, GoogleApiWrapper } from "google-maps-react"
 import ReactMapGL, {Marker, Popup} from "react-map-gl";
 import * as hotelloc from "./hotel-map-geo.json";
 // please do not uncomment below code
@@ -31,8 +27,8 @@ export default function Map() {
     // change above with .data for coordinates data
     latitude: 41.8719,
     longitude: 12.5674,
-    width: "30vw",
-    height: "115vh",
+    width: "35vw",
+    height: "90vh",
     zoom: 10
   });
   const [selectedHotel, setSelectedHotel] = useState(null);

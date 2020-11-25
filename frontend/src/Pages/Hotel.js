@@ -1,4 +1,4 @@
-// Individual Hotel Page
+// Individual Hotel Page 
 
 import React, { Component } from "react";
 import "../App.css";
@@ -10,6 +10,7 @@ import Axios from "axios";
 //import ReactMapGL, { Marker, Popup } from "react-map-gl";
 //import { useState, useEffect } from "react";
 import Map from "../components/hotelmap"
+import ReviewsComp from "../components/reviews";
 
 
 
@@ -17,6 +18,7 @@ class Hotel extends Component {
 
   state = {
     hotels: [],
+    newreview: "",
     datefrom: "",
     dateto: "",
   };
@@ -51,6 +53,31 @@ class Hotel extends Component {
       if (res.data){
         console.log(res.data);
       }
+    });
+  }
+
+  handleChange = async(e) => {
+    await this.setState({newreview: e.target.value});
+  }
+
+  handleSubmit = async(e) => {
+    e.preventDefault();
+    let url = window.location.pathname
+    let productId = url.split("/")[2]
+    //console.log(this.state.newreview);
+    //console.log("New review be added");
+    Axios({
+      method: "POST",
+      data: {
+        review: this.state.newreview,
+        productId: productId,
+      },
+      withCredentials: true,
+      url: "http://localhost:5000/addreview",
+    }).then(function (res) {
+      console.log(res);
+      window.location.reload(false);
+      alert(res.data);
     });
   }
 
@@ -114,6 +141,19 @@ class Hotel extends Component {
 
           <button onClick={this.handleBook}>Book Now</button> &nbsp; &nbsp; &nbsp;
           <button onClick={this.handleBucketList}>Add to Bucket List</button>
+
+          <h1>Product Reviews</h1>
+            <center>
+              <ReviewsComp products={this.state.hotels} />
+            </center>
+
+            <h1 style={{marginTop: "3%"}}>Want to review this hotel?</h1>
+            <form onSubmit={this.handleSubmit}>
+              <label style={{width: "50%"}}>
+                <textarea value={this.state.newreview} onChange={this.handleChange} placeholder="Add your review here!" />
+                <input className="review-btn" type="submit" value="Submit" />
+              </label>
+            </form>
           
          </div>
 
