@@ -8,7 +8,7 @@ const user = new mongoose.Schema({
   password: String,
   address: { type: String, default: "home" },
   mobile: Number,
-  booked: [{ source: String, destination: String, dateto: String, datefrom: String, hotelId: String, hotelcost: Number, carcost: Number, flightcost: Number }],
+  booked: [{ source: String, destination: String, dateto: String, datefrom: String, hotelId: String, hotelcost: Number, hotelimageurl: String, hotellocation: String, hotelname: String, carcost: Number, cartype: String, carimageurl: String, flightarrival: String, flightdeparture: String, flightcarriercode: String, flightnumber: Number, flightcost: Number }],
   bucketlist: [{ type: String }],
   visited: [{ type: String }],
 });

@@ -17,6 +17,7 @@ const nodemailer = require('nodemailer');
 const User = require("./user");
 const Hotel = require("./hotels");
 var Amadeus = require('amadeus');
+const user = require("./user");
 
 
 const app = express()
@@ -359,8 +360,17 @@ app.post("/book", (req,res) =>{
   destination = req.body.destination,
   hotelId = req.body.hotelId,
   hotelcost = req.body.hotelcost,
+  hotelname = req.body.hotelname,
+  hotellocation = req.body.hotellocation,
+  hotelimageurl = req.body.hotelimageurl,
   flightcost = req.body.flightcost,
-  carcost = req.body.carcost
+  flightarrival = req.body.flightarrival,
+  flightdeparture = req.body.flightdeparture,
+  flightcarriercode = req.body.flightcarriercode,
+  flightnumber = req.body.flightnumber,
+  carcost = req.body.carcost,
+  cartype = req.body.cartype,
+  carimageurl = req.body.carimageurl
 
   if(!req.user){
     res.send("User not logged in!")
@@ -373,8 +383,9 @@ app.post("/book", (req,res) =>{
     if (doc){
       newBooking = {  source: source, destination: destination, 
                       dateto: dateto, datefrom: datefrom, 
-                      hotelId: hotelId, hotelcost: hotelcost, 
-                      carcost: carcost, flightcost: flightcost }
+                      hotelId: hotelId, hotelcost: hotelcost, hotelname: hotelname, hotellocation: hotellocation, hotelimageurl: hotelimageurl,
+                      carcost: carcost, cartype: cartype, carimageurl: carimageurl, 
+                      flightcost: flightcost, flightarrival: flightarrival, flightdeparture: flightdeparture, flightcarriercode: flightcarriercode, flightnumber: flightnumber }
       doc.booked.push(newBooking);
       doc.save();
     }
@@ -391,7 +402,7 @@ app.post("/book", (req,res) =>{
   })
   //console.log(hotelcost);
   //console.log(hotelId);
-  res.send("Working, I hope ;-;")
+  res.send("Working!!!")
   }
   
 })
@@ -495,7 +506,7 @@ app.get("/getbucketlist", (req, res) => {
       if (err) throw err;
       if (doc){
         await res.send(doc);
-        console.log(doc)
+        //console.log(doc)
       }
     });
   }
@@ -515,7 +526,7 @@ app.get("/getbookedhotels", async(req, res) => {
       })
     ))
         await res.send(hotels);
-        console.log(hotels)
+        //console.log(hotels)
   }
 });
 
@@ -532,6 +543,54 @@ app.get('/userstatus', (req, res) => {
 
 app.get('/', (req, res) => {
   res.send('Hello World!')
+})
+
+app.get('/recco', (req, res) => {
+
+  var quer = ""
+
+  if (req.user){
+    Hotel.findOne({_id: req.user.visited[req.user.visited.length -1]}, (err,doc) => {
+      //console.log(doc.tags)
+      quer = doc.tags.join(" ");
+      Hotel.aggregate([
+        {
+          '$search': {
+            'text': {
+              'query': quer, 
+              'path': 'tags'
+            }
+          }
+        }, {
+          '$project': {
+            'name': 1, 
+            'location': 1,
+            'desc': 1,
+            'price': 1,
+            'imageurl': 1,
+            'amenities': 1,
+            'reviews': 1,
+            'rating': 1,
+            'score': {
+              '$meta': 'searchScore'
+            }
+          }
+        }
+      ]).exec((err, doc) => {
+        if (err) console.log(err);
+        //console.log(doc)
+        if(doc){
+          res.send(doc);
+        }
+      })
+    })
+    
+  }
+  else{
+    res.send([]);
+  //var viewed = ['5fb33f08e8470f63a5c00346'];
+  }
+  
 })
 
 app.listen(PORT, () => {

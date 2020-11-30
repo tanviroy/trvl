@@ -6,6 +6,7 @@ import Axios from "axios";
 import "../App.css";
 import Image from 'react-bootstrap/Image'
 import ProfileHotelsComp from "../components/profilehotels";
+import ProfileBookedComp from "../components/profilebooked";
 //import BookingComp from "../components/booking";
 
 
@@ -51,15 +52,6 @@ class Profile extends Component {
       url: "http://localhost:5000/getbucketlist",
     }).then((res) => {
         this.setState({ bucketlistedhotels: res.data });
-    });
-
-    Axios({
-      method: "GET",
-      withCredentials: true,
-      url: "http://localhost:5000/getbookedhotels",
-    }).then((res) => {
-        this.setState({ bookedhotels: res.data });
-        console.log(res.data)
     });
 
   };
@@ -145,11 +137,7 @@ class Profile extends Component {
             <br/><br/><br/><br/>
             <div className="login">
             <h1><b>Your Bookings</b></h1>
-            {this.state.booked.map((booking) => (
-              <div key={booking._id}>
-                {booking.source} to {booking.destination} on {booking.dateto.toString()}
-              </div>
-            ))}
+            <ProfileBookedComp hotels={this.state.booked}/>
             <br/>
             <h1><b>Your Bucketlisted Hotels</b></h1>
             <ProfileHotelsComp hotels={this.state.bucketlistedhotels}/>

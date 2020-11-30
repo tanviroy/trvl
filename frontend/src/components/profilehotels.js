@@ -1,7 +1,7 @@
 import React from "react";
 import "../App.css";
 import "../styles/hotels.css";
-import { Link } from "react-router-dom";
+//import { Link } from "react-router-dom";
 
 const ProfileHotelsComp = ({ hotels }) => {
     return (
@@ -15,7 +15,7 @@ const ProfileHotelsComp = ({ hotels }) => {
                 <img
                   className="hotel-image"
                   src={hotel.imageurl}
-                  alt="Hotel Image"
+                  alt="Hotel"
                 />
 
                 <div className="right3">
