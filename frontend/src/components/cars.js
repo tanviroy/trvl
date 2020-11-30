@@ -22,7 +22,7 @@ const CarsComp = ({ selectCar }) => {
                 </div>
 
                 <div className="hotel-price"> Starting at $89 per day <br/>
-                <button className="hotel-button" onClick={() => selectCar(877)}>Select</button></div>
+                <button className="hotel-button" onClick={() => selectCar(89, 'Economy', 'https://www.hdwallpapers.in/download/black_volkswagen_golf_gtd_2020_4k_5k_hd_cars-HD.jpg')}>Select</button></div>
 
                 </div>
 
@@ -42,7 +42,7 @@ const CarsComp = ({ selectCar }) => {
                 </div>
 
                 <div className="hotel-price">$239 per day <br/>
-                <button className="hotel-button" onClick={() => selectCar(239)}>Select</button></div>
+                <button className="hotel-button" onClick={() => selectCar(239, 'Executive', "https://www.autocar.co.uk/sites/autocar.co.uk/files/styles/gallery_slide/public/images/car-reviews/first-drives/legacy/large-2479-s-classsaloon.jpg?itok=QTxMln2k")}>Select</button></div>
 
                 </div>
 
@@ -62,7 +62,7 @@ const CarsComp = ({ selectCar }) => {
                 </div>
 
                 <div className="hotel-price">$150 per day <br/>
-                <button className="hotel-button" onClick={() => selectCar(50)}>Select</button></div>
+                <button className="hotel-button" onClick={() => selectCar(150, 'Family', "https://media.familyminded.com/ee/88/ee88b74994d2469c945f0128bcef0caa.jpeg")}>Select</button></div>
 
                 </div>
 
@@ -82,7 +82,7 @@ const CarsComp = ({ selectCar }) => {
                 </div>
 
                 <div className="hotel-price">Starting at $200 per day <br/>
-                <button className="hotel-button" onClick={() => selectCar(100)}>Select</button></div>
+                <button className="hotel-button" onClick={() => selectCar(200, 'Off-Road 4WD', "https://cdn.carbuzz.com/gallery-images/840x560/711000/0/711084.jpg")}>Select</button></div>
 
                 </div>
 

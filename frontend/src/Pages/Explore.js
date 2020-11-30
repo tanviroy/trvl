@@ -26,8 +26,17 @@ class Explore extends Component {
     dateto: new Date(1999,0,1),
     days: 0,
     flightPrice: 0,
+    flightcarriercode: '',
+    flightnumber: 0,
+    flightarrival: '',
+    flightdeparture: '',
     hotelPrice: 0,
+    hotelimageurl: '',
+    hotellocation: '',
+    hotelname: '',
     carPrice: 0,
+    cartype: '',
+    carimageurl: '',
     progress: 1,
     hotelSelectID: '',
   };
@@ -139,17 +148,29 @@ class Explore extends Component {
 
   }
 
-  selectFlight = (price) =>{
-    this.setState({flightPrice:price});
+  selectFlight = (price, departure, arrival, carriercode, number ) =>{
+    this.setState({
+      flightPrice:price,
+      flightarrival: arrival,
+      flightdeparture: departure,
+      flightcarriercode: carriercode,
+      flightnumber: number});
   }
 
-  selectHotel = (price, id) =>{
-    this.setState({hotelPrice:price});
-    this.setState({hotelSelectID:id});
+  selectHotel = (price, id, name, location, imageurl) =>{
+    this.setState({
+      hotelPrice:price,
+      hotelSelectID:id,
+      hotelname: name,
+      hotellocation: location,
+      hotelimageurl: imageurl});
   }
 
-  selectCar = (price) =>{
-    this.setState({carPrice:price});
+  selectCar = (price, type, imageurl) =>{
+    this.setState({
+      carPrice: price,
+      cartype: type,
+      carimageurl: imageurl});
   }
 
   handleProceed = () => {
@@ -198,8 +219,17 @@ handleBook = () => {
               dateto: this.state.dateto,
               hotelId: this.state.hotelSelectID,
               hotelcost: this.state.hotelPrice,
+              hotelname: this.state.hotelname,
+              hotellocation: this.state.hotellocation,
+              hotelimageurl: this.state.hotelimageurl,
               flightcost: this.state.flightPrice,
+              flightarrival: this.state.flightarrival,
+              flightdeparture: this.state.flightdeparture,
+              flightcarriercode: this.state.flightcarriercode,
+              flightnumber: this.state.flightnumber,
               carcost: this.state.carPrice,
+              cartype: this.state.cartype,
+              carimageurl: this.state.carimageurl
           }
         }).then((res) => {
           console.log(res.data);

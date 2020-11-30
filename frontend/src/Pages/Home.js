@@ -16,6 +16,7 @@ class Home extends Component {
 
   state = {
     hotels: [],
+    recco: [],
   };
 
   componentDidMount(){
@@ -27,6 +28,14 @@ class Home extends Component {
         this.setState({ hotels: res.data});
         console.log(res.data)
       });
+      Axios({
+        method: "GET",
+        withCredentials: true,
+        url: "http://localhost:5000/recco",
+      }).then((res) => {
+          this.setState({ recco: res.data});
+          console.log(res.data)
+        });
   }
   
   render() {
@@ -56,8 +65,11 @@ class Home extends Component {
             }}
           />
           </h1>
+          <h1>Based on your browsing history</h1><br/>
+          <HotelCardComp hotels={this.state.recco.slice(0,5)} /> <br/>
 
-          <HotelCardComp hotels={this.state.hotels} />
+          <h1>Recently Viewed Hotels</h1><br/>
+          <HotelCardComp hotels={this.state.hotels.slice(0,6)} />
       </div>
     </section>
 

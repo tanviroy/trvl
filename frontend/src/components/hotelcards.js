@@ -6,13 +6,13 @@ import "../styles/hotelcard.css";
 
 import { Link } from "react-router-dom";
 
-const HotelCardComp = ({ hotels }) => {
+const HotelCardComp = ({ hotels, datefrom = new Date(), dateto = new Date() }) => {
     return (
       <div className="hotelcard-container">
           {hotels.map((hotel) => (
             <li className="hotelcard-items" key={hotel._id}>
               <div className="hotelcard">
-              <Link to={"/hotel/" + hotel._id}>
+              <Link to={"/hotel/" + hotel._id+"/"+datefrom.toString()+"/"+dateto.toString()}  target="_blank">
 
                   <img
                       className="hotelcard-image"
