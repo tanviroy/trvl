@@ -129,7 +129,7 @@ class Hotel extends Component {
          <div className="left4">
           <div style={{fontSize: "3rem", color: "#003060"}}>{hotel.name}</div><br />
           <div style={{color: "grey", marginTop: "-1%", position: "relative"}}>{hotel.location}</div><br />
-          <div><p>${hotel.price}</p></div><br />
+          <div>Price per night: <b>${hotel.price}</b></div><br />
           <div><p style={{fontWeight: "600"}}>Hotel Description:</p>
           {hotel.desc}</div><br />
           <div><p style={{fontWeight: "600"}}>Hotel Amenities:</p>
@@ -137,23 +137,26 @@ class Hotel extends Component {
           </div><br />
           <h2>{ (this.state.datefrom.includes('%'))?"null":this.state.datefrom + " to " }{ (this.state.dateto.includes('%'))?"null":this.state.dateto}</h2>
 
-          <br />
+          <br /><br /><br /><br />
 
-          <button onClick={this.handleBook}>Book Now</button> &nbsp; &nbsp; &nbsp;
-          <button onClick={this.handleBucketList}>Add to Bucket List</button>
+          <center><div className="hotel-actions"><center>
 
-          <h1>Product Reviews</h1>
+          <button className="otherbuttons" onClick={this.handleBucketList}>Add to Bucket List ❤️</button>
+          <br /><br /><br />
+          <h1>Hotel Reviews 📌</h1><br/>
             <center>
               <ReviewsComp hotels={this.state.hotels} />
             </center>
 
-            <h1 style={{marginTop: "3%"}}>Want to review this hotel?</h1>
+            <h1 style={{marginTop: "3%"}}>Want to review this hotel? ✏️</h1>
             <form onSubmit={this.handleSubmit}>
-              <label style={{width: "50%"}}>
-                <textarea value={this.state.newreview} onChange={this.handleChange} placeholder="Add your review here!" />
-                <input className="review-btn" type="submit" value="Submit" />
+              <label style={{width: "90%"}}>
+                <textarea value={this.state.newreview} onChange={this.handleChange} placeholder="Add your review here!" />&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+                <input className="submit" type="submit" value="Submit" />
               </label>
             </form>
+
+          </center></div></center>
           
          </div>
 
