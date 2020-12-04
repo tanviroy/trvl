@@ -41,7 +41,7 @@ const ProfileBookedComp = ({ hotels }) => {
                   <b>{hotel.flightcarriercode}</b> {hotel.flightnumber}
                 </div>
                 <div className="hotel-name">
-          <b>{hotel.source}</b> ({hotel.flightdeparture.split('T')[1]}) - <b>{hotel.destination}</b> ({hotel.flightarrival.split('T')[1]})
+          <b>{hotel.source}</b> ({hotel.flightdeparture}) - <b>{hotel.destination}</b> ({hotel.flightarrival})
                 </div>
                 <div className="hotel-price"> Price: ${hotel.flightcost} <br/></div>
             </div>   
