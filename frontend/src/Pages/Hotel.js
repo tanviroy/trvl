@@ -135,11 +135,9 @@ class Hotel extends Component {
           <div><p style={{fontWeight: "600"}}>Hotel Amenities:</p>
             <ul>{hotel.amenities.map(name => <li style={{listStyleType: "disc"}} key={name}> {name} </li>)}</ul>
           </div><br />
-          <h2>{ (this.state.datefrom.includes('%'))?"null":this.state.datefrom + " to " }{ (this.state.dateto.includes('%'))?"null":this.state.dateto}</h2>
+          <h2>{ (this.state.datefrom.includes('%'))?null:this.state.datefrom + " to " }{ (this.state.dateto.includes('%'))?null:this.state.dateto}</h2>
 
-          <br /><br /><br /><br />
-
-          <center><div className="hotel-actions"><center>
+          <center>
 
           <button className="otherbuttons" onClick={this.handleBucketList}>Add to Bucket List ❤️</button>
           <br /><br /><br />
@@ -156,7 +154,7 @@ class Hotel extends Component {
               </label>
             </form>
 
-          </center></div></center>
+          </center>
           
          </div>
 
@@ -165,7 +163,7 @@ class Hotel extends Component {
            <Map google={this.props.google} />
            </div> */}
 
-           {this.state.hotels.length != 0
+           {this.state.hotels.length !== 0
            ?<Map lat={41.8719} long={12.5674} hotel={this.state.hotels}/>
           :null}
            

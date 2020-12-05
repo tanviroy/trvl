@@ -39,6 +39,7 @@ class Explore extends Component {
     carimageurl: '',
     progress: 0,
     hotelSelectID: '',
+    userstatus: '',
   };
 
   componentDidMount = async(e) =>{
@@ -55,6 +56,15 @@ class Explore extends Component {
     }).then((res) => {
       this.setState({ hotels: res.data });
       console.log(res.data);
+    });
+
+    Axios({
+      method: "GET",
+      withCredentials: true,
+      url: "http://localhost:5000/userstatus",
+
+    }).then((res) => {
+      this.setState({ userstatus: res.data });
     });
     
   }
@@ -100,16 +110,12 @@ class Explore extends Component {
         alert("You can't travel back in time, sweetie")
     }
     else{
-      this.setState({ progress: 1 });
+      
 
-        Axios({
-            method: "GET",
-            withCredentials: true,
-            url: "http://localhost:5000/userstatus",
-        }).then((res) =>{
-            if(!res.data) alert("Please login to proceed")
-            if(res.data){
 
+            if(!this.state.userstatus) alert("Heads up: Unlesss you're logged in, you won't be able to book!")
+            
+              this.setState({ progress: 1 });
                 Axios({
                     method: "POST",
                     withCredentials: true,
@@ -125,8 +131,8 @@ class Explore extends Component {
                     //console.log(res.data.data);
                   });
 
-            }
-        })
+        
+ 
         
     }
    
@@ -320,18 +326,38 @@ handleBook = () => {
             : null}
             <br />
             <hr/>
-            Flight Price: {this.state.flightPrice}<br/>
-            Hotel Price: {this.state.hotelPrice} x {this.state.days} nights<br/>
-            Car Price: {this.state.carPrice} x {this.state.days} days<br/>
+            <b>Flight Price:</b> $ {this.state.flightPrice}<br/>
+            <b>Hotel Price:</b> $ {this.state.hotelPrice} x {this.state.days} nights<br/>
+            <b>Car Price:</b> $ {this.state.carPrice} x {this.state.days} days<br/>
             <hr/>
 
-            <b>Subtotal: </b>{(parseFloat(this.state.flightPrice) + parseFloat(this.state.hotelPrice)*parseInt(this.state.days) + parseFloat(this.state.carPrice)*parseInt(this.state.days))}<br/>
-            {this.state.progress<3?
-            <button className="proceed-button" onClick={this.handleProceed}>Proceed ➡</button>:null}
+            <b>Subtotal: </b> ${(parseFloat(this.state.flightPrice) + parseFloat(this.state.hotelPrice)*parseInt(this.state.days) + parseFloat(this.state.carPrice)*parseInt(this.state.days))}<br/>
+            
             {this.state.progress===1?
-            null:<button className="proceed-button" onClick={this.handleBackProceed}>Go Back ⬅</button>}
+            <div>
+              <button className="proceed-button" onClick={this.handleProceed}>Proceed ➡</button> <br/>
+              <button className="proceed-button" onClick={this.handleBackProceed}>Go Back ⬅</button>
+              </div>:
+              null}
+
+            {this.state.progress===2?  
+            <div>
+              <button className="proceed-button" onClick={this.handleProceed}>Proceed ➡</button> <br/>
+              <button className="proceed-button" onClick={this.handleBackProceed}>Go Back ⬅</button>
+              </div>:
+              null}
+
             {this.state.progress===3?
-            <button className="proceed-button" onClick={this.handleBook}>Book!</button>:null}
+            this.state.userstatus===false?
+            <div>
+              <button className="proceed-button" onClick={this.handleBackProceed}>Go Back ⬅</button><br/>
+
+            </div>
+            :
+            <div>
+              <button className="proceed-button" onClick={this.handleBackProceed}>Go Back ⬅</button><br/>
+              <button className="proceed-button" onClick={this.handleBook}>Book!</button>
+            </div>:null}
             
           </div>
           
