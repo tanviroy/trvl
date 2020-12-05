@@ -9,7 +9,7 @@ import Axios from "axios";
 //import { Map, Marker, GoogleApiWrapper } from "google-maps-react"
 //import ReactMapGL, { Marker, Popup } from "react-map-gl";
 //import { useState, useEffect } from "react";
-import Map from "../components/hotelmap"
+import Map from "../components/hotelmap2"
 import ReviewsComp from "../components/reviews";
 
 
@@ -37,7 +37,7 @@ class Hotel extends Component {
     }).then((res) => {  
       if (res.data){
         this.setState({hotels: res.data });
-        console.log(this.state.hotels[0]);
+        console.log(this.state.hotels[0].coords[0]);
       }
     });
   }
@@ -164,7 +164,12 @@ class Hotel extends Component {
            {/* <div className="Hotel">
            <Map google={this.props.google} />
            </div> */}
-          <Map />
+
+           {this.state.hotels.length != 0
+           ?<Map lat={41.8719} long={12.5674} hotel={this.state.hotels}/>
+          :null}
+           
+          
          </div>
 
         </div>

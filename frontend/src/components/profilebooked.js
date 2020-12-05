@@ -12,7 +12,10 @@ const ProfileBookedComp = ({ hotels }) => {
             <li key={hotel.hotelname}>
             <div className="card">
                 
-              <div className="card">
+                {hotel.hotelname === ''
+                ? null
+                :
+                <div className="card">
                 <img
                   className="hotel-image"
                   src={hotel.hotelimageurl}
@@ -28,7 +31,13 @@ const ProfileBookedComp = ({ hotels }) => {
                   <div className="hotel-price">${hotel.hotelcost}<br/> </div>
                 </div>
               </div>
+                
+                }
+              
 
+              {hotel.flightcarriercode === ''
+              ? null
+              :
               <div className="card">              
                   <img
                     className="hotel-image"
@@ -46,7 +55,11 @@ const ProfileBookedComp = ({ hotels }) => {
                 <div className="hotel-price"> Price: ${hotel.flightcost} <br/></div>
             </div>   
             </div>
+              }
 
+              {hotel.cartype === ''
+              ? null
+              : 
               <div className="card">
               <img
                       className="hotel-image"
@@ -60,6 +73,9 @@ const ProfileBookedComp = ({ hotels }) => {
                 <div className="hotel-price"> Starting at ${hotel.carcost} per day <br/></div>
                 </div>
               </div>
+              }
+
+              
             <center>
             <b>Trip Duration:</b> From {hotel.datefrom} To {hotel.dateto} <br/>
             <b>Total Cost:</b> $ {hotel.carcost + hotel.flightcost + hotel.hotelcost} <br/><br/>

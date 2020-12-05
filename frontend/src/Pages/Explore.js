@@ -37,7 +37,7 @@ class Explore extends Component {
     carPrice: 0,
     cartype: '',
     carimageurl: '',
-    progress: 1,
+    progress: 0,
     hotelSelectID: '',
   };
 
@@ -100,6 +100,7 @@ class Explore extends Component {
         alert("You can't travel back in time, sweetie")
     }
     else{
+      this.setState({ progress: 1 });
 
         Axios({
             method: "GET",
@@ -120,6 +121,7 @@ class Explore extends Component {
                     }
                   }).then((res) => {
                     this.setState({ flights: res.data.data });
+                    
                     //console.log(res.data.data);
                   });
 
@@ -338,30 +340,37 @@ handleBook = () => {
 
           <div className="right2">
 
-              {this.state.progress === 1
-                ? <div><h1>Select A Flight ✈️</h1><br />
-                <ProgressBar animated now={30} />
-                <FlightsComp flights={this.state.flights} selectFlight={this.selectFlight}/></div>
-                : this.state.progress === 2 
-                ?<div><h1>Select A Hotel 🏡</h1><br />
-                <ProgressBar animated now={60} />
-                <HotelsComp hotels={this.state.hotels} datefrom={this.state.datefrom} dateto={this.state.dateto}  selectHotel={this.selectHotel}/></div>
-                : this.state.progress === 3
-                ? <div><h1>Select A Cab 🚕</h1><br />
-                <ProgressBar animated now={90} />
-                <CarsComp selectCar={this.selectCar}/></div>
-                : <div><ProgressBar animated now={100} />
-                <img src="https://thumbs.gfycat.com/QuaintLikelyFlyingfish-size_restricted.gif" alt="Done"/>
-                <h1>Booking Complete!</h1></div>}
+            {this.state.progress === 0
+            ? <h1>Select Dates 	📅 </h1>
+            : this.state.progress === 1
+            ? <div><h1>Select A Flight ✈️</h1><br />
+            <ProgressBar animated now={30} />
+            
+            {this.state.flights.length === 0? <img src="https://miro.medium.com/max/1158/1*9EBHIOzhE1XfMYoKz1JcsQ.gif" alt="Load"/> : <FlightsComp flights={this.state.flights} selectFlight={this.selectFlight}/>}
+            </div>
+            : this.state.progress === 2 
+            ?<div><h1>Select A Hotel 🏡</h1><br />
+            <ProgressBar animated now={60} />
+            <HotelsComp hotels={this.state.hotels} datefrom={this.state.datefrom} dateto={this.state.dateto}  selectHotel={this.selectHotel}/></div>
+            : this.state.progress === 3
+            ? <div><h1>Select A Cab 🚕</h1><br />
+            <ProgressBar animated now={90} />
+            <CarsComp selectCar={this.selectCar}/></div>
+            : <div><ProgressBar animated now={100} />
+            <img src="https://thumbs.gfycat.com/QuaintLikelyFlyingfish-size_restricted.gif" alt="Done"/>
+            <h1>Booking Complete!</h1></div>}
 
-               <br />
-              
-          </div>
-        </div>
-
+           <br />
+          
       </div>
-    );
-  }
+    </div>
+
+  </div>
+);
+          }
+
+              
+  
 }
 
 export default Explore;
