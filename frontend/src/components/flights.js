@@ -37,7 +37,7 @@ const FlightsComp = ({flights, selectFlight}) => {
                 </div>
 
                 <div className="flight-price">
-                    {flight.price.total} {flight.price.currency}<br/><br />
+                    $ {flight.price.total}<br/><br />
                     <button className="flight-button" onClick={() => selectFlight(flight.price.total, flight.itineraries[0].segments[0].departure.at.toString(), flight.itineraries[0].segments[0].arrival.at.toString(), flight.itineraries[0].segments[0].carrierCode, flight.itineraries[0].segments[0].number)}>Select</button>
                 </div>
 

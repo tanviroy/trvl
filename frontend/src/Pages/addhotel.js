@@ -10,6 +10,9 @@ export default function AddProduct() {
   const [imageurl, setImageurl] = useState("");
   const [amenities, setAmenities] = useState("");
   const [rating, setRating] = useState("");
+  const [coords, setCoords] = useState("");
+  const [iata, setIata] = useState("");
+  const [tags, setTags] = useState("");
 
   const addItem = () => {
     Axios({
@@ -22,6 +25,9 @@ export default function AddProduct() {
         price: price,
         rating: rating,
         amenities: amenities,
+        coords: coords,
+        iata: iata,
+        tags: tags
 
       },
       withCredentials: true,
@@ -53,7 +59,7 @@ export default function AddProduct() {
         onChange={(e) => setPrice(e.target.value)}
       /><br/>
       <input
-        placeholder="Enter amenities separated by a comma"
+        placeholder="Enter amenities, comma"
         onChange={(e) => setAmenities(e.target.value.split(","))}
       /><br/>
       <input
@@ -63,6 +69,18 @@ export default function AddProduct() {
       <input
         placeholder="Enter image URL separated by space"
         onChange={(e) => setImageurl(e.target.value.split(" "))}
+      /><br/>
+      <input
+        placeholder="Enter coords separated by space"
+        onChange={(e) => setCoords(e.target.value.split(" "))}
+      /><br/>
+      <input
+        placeholder="Enter iata code separated by space"
+        onChange={(e) => setIata(e.target.value.split(" "))}
+      /><br/>
+      <input
+        placeholder="Enter tags separated by space"
+        onChange={(e) => setTags(e.target.value.split(" "))}
       /><br/>
 
       <button onClick={() => addItem()}>Add Product to DB</button>

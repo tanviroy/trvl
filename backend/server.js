@@ -447,55 +447,7 @@ app.post("/addreview", (req, res) => {
 //========================================= 
 
 app.post("/addhotel", (req, res) => {
-
-  var availability = [
-    { date: new Date(2020,10,16), rooms: 3 },
-    { date: new Date(2020,10,17), rooms: 3 },
-    { date: new Date(2020,10,18), rooms: 3 },
-    { date: new Date(2020,10,19), rooms: 3 },
-    { date: new Date(2020,10,20), rooms: 3 },
-    { date: new Date(2020,10,21), rooms: 3 },
-    { date: new Date(2020,10,22), rooms: 3 },
-    { date: new Date(2020,10,23), rooms: 3 },
-    { date: new Date(2020,10,24), rooms: 3 },
-    { date: new Date(2020,10,25), rooms: 3 },
-    { date: new Date(2020,10,26), rooms: 3 },
-    { date: new Date(2020,10,27), rooms: 3 },
-    { date: new Date(2020,10,28), rooms: 3 },
-    { date: new Date(2020,10,29), rooms: 3 },
-    { date: new Date(2020,10,30), rooms: 3 },
-    { date: new Date(2020,11,1), rooms: 3 },
-    { date: new Date(2020,11,2), rooms: 3 },
-    { date: new Date(2020,11,3), rooms: 3 },
-    { date: new Date(2020,11,4), rooms: 3 },
-    { date: new Date(2020,11,5), rooms: 3 },
-    { date: new Date(2020,11,6), rooms: 3 },
-    { date: new Date(2020,11,7), rooms: 3 },
-    { date: new Date(2020,11,8), rooms: 3 },
-    { date: new Date(2020,11,9), rooms: 3 },
-    { date: new Date(2020,11,10), rooms: 3 },
-    { date: new Date(2020,11,11), rooms: 3 },
-    { date: new Date(2020,11,12), rooms: 3 },
-    { date: new Date(2020,11,13), rooms: 3 },
-    { date: new Date(2020,11,14), rooms: 3 },
-    { date: new Date(2020,11,15), rooms: 3 },
-    { date: new Date(2020,11,16), rooms: 3 },
-    { date: new Date(2020,11,17), rooms: 3 },
-    { date: new Date(2020,11,18), rooms: 3 },
-    { date: new Date(2020,11,19), rooms: 3 },
-    { date: new Date(2020,11,20), rooms: 3 },
-    { date: new Date(2020,11,21), rooms: 3 },
-    { date: new Date(2020,11,22), rooms: 3 },
-    { date: new Date(2020,11,23), rooms: 3 },
-    { date: new Date(2020,11,24), rooms: 3 },
-    { date: new Date(2020,11,25), rooms: 3 },
-    { date: new Date(2020,11,26), rooms: 3 },
-    { date: new Date(2020,11,27), rooms: 3 },
-    { date: new Date(2020,11,28), rooms: 3 },
-    { date: new Date(2020,11,29), rooms: 3 },
-    { date: new Date(2020,11,30), rooms: 3 },
-    { date: new Date(2020,11,31), rooms: 3 }]
-  
+ 
   const newHotel = new Hotel({
     name: req.body.name,
     location: req.body.location,
@@ -504,7 +456,7 @@ app.post("/addhotel", (req, res) => {
     price: req.body.price,
     rating: req.body.rating,
     amenities: req.body.amenities,
-    available: availability
+   
   });
   newHotel.save();
   res.send("New product added");
@@ -564,46 +516,55 @@ app.get('/recco', (req, res) => {
   var quer = ""
 
   if (req.user){
-    Hotel.findOne({_id: req.user.visited[req.user.visited.length -1]}, (err,doc) => {
-      //console.log(doc.tags)
-      quer = doc.tags.join(" ");
-      Hotel.aggregate([
-        {
-          '$search': {
-            'text': {
-              'query': quer, 
-              'path': 'tags'
+
+    if (req.user.visited.length === 0){
+      res.send([])
+    }
+    else{
+      Hotel.findOne({_id: req.user.visited[req.user.visited.length -1]}, (err,doc) => {
+        //console.log(doc.tags)
+        quer = doc.tags.join(" ");
+        Hotel.aggregate([
+          {
+            '$search': {
+              'text': {
+                'query': quer, 
+                'path': 'tags'
+              }
+            }
+          }, {
+            '$project': {
+              'name': 1, 
+              'location': 1,
+              'desc': 1,
+              'price': 1,
+              'imageurl': 1,
+              'amenities': 1,
+              'reviews': 1,
+              'rating': 1,
+              'score': {
+                '$meta': 'searchScore'
+              }
             }
           }
-        }, {
-          '$project': {
-            'name': 1, 
-            'location': 1,
-            'desc': 1,
-            'price': 1,
-            'imageurl': 1,
-            'amenities': 1,
-            'reviews': 1,
-            'rating': 1,
-            'score': {
-              '$meta': 'searchScore'
-            }
+        ]).exec((err, doc) => {
+          if (err) console.log(err);
+          //console.log(doc)
+          if(doc){
+            res.send(doc);
           }
-        }
-      ]).exec((err, doc) => {
-        if (err) console.log(err);
-        //console.log(doc)
-        if(doc){
-          res.send(doc);
-        }
+        })
       })
-    })
+      
+    }
     
-  }
-  else{
-    res.send([]);
-  //var viewed = ['5fb33f08e8470f63a5c00346'];
-  }
+
+    }
+    else{
+      res.send([]);
+    //var viewed = ['5fb33f08e8470f63a5c00346'];
+    }
+    
   
 })
 

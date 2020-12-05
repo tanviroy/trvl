@@ -58,12 +58,12 @@
   filter: drop-shadow(3px 3px 2px rgba(0, 0, 0, 0.7));
 }
 
-.hotel-actions{
+.hotel-actions {
   width: 100rem;
-  text-align: center;
-  justify-self: center;
+  text-align: left;
+  justify-self: left;
   margin-left: 5rem;
-  margin-right: 5rem;
+  margin-right: 15rem;
   border: 5px solid #003060;
   border-radius: 10px;
   border-color: #003060;
@@ -81,5 +81,5 @@
   width: auto;
   font-size: medium;
   margin-left: 3%;
-  transform: translate(-50%, -50%)
+  transform: translate(-50%, -50%);
 }
