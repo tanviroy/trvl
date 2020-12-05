@@ -223,6 +223,7 @@ app.get("/gethotels", (req, res) => {
     }
   })
 });
+
 app.post("/gethotels", (req, res) => {
   Hotel.find({}, async(err,doc) => {
     if (!doc) res.send("No hotels in DB");
@@ -230,6 +231,15 @@ app.post("/gethotels", (req, res) => {
       res.send(doc);
     }
   })
+});
+
+app.get("/getfeaturedhotels", (req, res) => {
+  Hotel.find({featured : "Y"}, async (err, doc) =>{
+    if (err) throw err;
+    if (doc){
+      res.send(doc);
+    }
+  });
 });
 
 app.get("/viewedhotels", (req, res) => {
@@ -391,15 +401,19 @@ app.post("/book", (req,res) =>{
     }
   })
 
-  Hotel.findOne({_id: hotelId}, (err,doc) => {
-    if (err) throw err;
-    if (!doc) res.send("Hotel doesn't exist");
-    if (doc) {
-      doc.bookers.push(userID);
-      doc.save();
-    }
+  if(hotelId!=''){
+    Hotel.findOne({_id: hotelId}, (err,doc) => {
+      if (err) throw err;
+      if (!doc) res.send("Hotel doesn't exist");
+      if (doc) {
+        doc.bookers.push(userID);
+        doc.save();
+      }
+  
+    })
+  }
 
-  })
+  
   //console.log(hotelcost);
   //console.log(hotelId);
   res.send("Working!!!")

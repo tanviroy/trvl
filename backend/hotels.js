@@ -15,6 +15,7 @@ const hotel = new mongoose.Schema({
   bookers: [{ type: String }],
   available: [{ date: Date, rooms: Number }],
   bucketlisted: [{ type: String }],
+  coords: [{ type: Number }]
 });
 
 module.exports = mongoose.model("hotels", hotel);
