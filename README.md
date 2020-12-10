@@ -67,29 +67,30 @@ We used 2 databases - one for all users and another for hotels. <br/>
 <tbody>
 	<tr>
 		<td>Users</td>
-		<td>username: String,<br/>
+		<td>name: String,  <br/>
   		googleId: String,<br/>
-  		email: String,<br/>
+ 		email: String,<br/>
   		password: String,<br/>
   		address: { type: String, default: "home" },<br/>
   		mobile: Number,<br/>
-  		orders: [{ type: String }],<br/>
-  		cart: [{ type: String }],<br/>
-  		wishlist: [{ type: String }],</td><br/>
+  		booked: [{ source: String, destination: String, dateto: String, datefrom: String, hotelId: String, hotelcost: Number, carcost: Number, flightcost: Number }],<br/>
+  		bucketlist: [{ type: String }],<br/>
+  		visited: [{ type: String }],</td><br/>
 	</tr>
 	<tr>
-		<td>Products</td>
-		<td>name: String,<br/>
-  		description: String,<br/>
- 		category: [{ type: String }],<br/>
- 		color: [{type: String}],<br/>
- 		gender: [{type: String}],<br/>
-  		imageurl: String,<br/>
-  		price: Number,<br/>
- 		rating: [{ type: Number }],<br/>
+		<td>Hotels</td>
+		<td>name: String,  <br/>
+  		location: String,<br/>
+  		price: String,<br/>
+  		desc: String,<br/>
+  		imageurl: [{ type: String }],<br/>
+  		amenities: [{ type: String }],<br/>
+  		iata: [{ type: String }],<br/>
+  		rating: [{ type: Number }],<br/>
   		reviews: [{ body: String, user: String, verified: String }],<br/>
-  		buyers: [{ type: String }],<br/>
-  		wishers: [{ type: String }],</td><br/>
+  		bookers: [{ type: String }],<br/>
+  		available: [{ date: Date, rooms: Number }],<br/>
+  		bucketlisted: [{ type: String }],</td><br/>
 	</tr>
 	
 </tbody>
@@ -141,5 +142,5 @@ The Figma wireframe for the project can be viewed [here](https://www.figma.com/f
 ### User Profile - Update Info, View User Insights
 
 ## Citations
-Nearly all of the project code was written by us ourselves. We used documentation code for React Bootstrap, Express, and Passportjs where needed. 
+Nearly all of the project code was written by us ourselves. We used documentation code for React Bootstrap, Express, MapBox, and Passportjs where needed. 
 * We scraped the hotel data from [Airbnb](https://www.airbnb.co.in/)
