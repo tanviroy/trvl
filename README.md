@@ -4,7 +4,7 @@
 ## Quick Start
 Open up a CLI, and execute the following commands:
 ```
-$ git clone https://github.com/hulikalruthu/approject2.git
+$ git clone https://github.com/tanviroy/trvl.git
 $ cd approject2
 
 $ cd backend 
