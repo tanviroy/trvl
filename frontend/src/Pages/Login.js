@@ -62,10 +62,10 @@ export default function Login() {
           onChange={(e) => setLoginPassword(e.target.value)}
           className="input-box"
         />
-        <br /><br />
+        <br />
 
         <Link to="/profile">
-          <button onClick={login}>Continue</button><br/>
+          <button className="otherbuttons" onClick={login}>Continue</button><br/>
         </Link>
 
         <br />
