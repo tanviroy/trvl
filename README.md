@@ -133,13 +133,21 @@ The Figma wireframe for the project can be viewed [here](https://www.figma.com/f
 
 ### Home Page
 
+![screenshot-2020-12-12-231124](https://user-images.githubusercontent.com/61850850/101993734-ebb95800-3ce2-11eb-8b8d-f1947b9b87c8.jpg)
+
+![Webp net-resizeimage](https://user-images.githubusercontent.com/61850850/101993736-ee1bb200-3ce2-11eb-965e-d7355d6d2ec7.jpg)
+
 ### Explore - Search Flights, Hotels, and Cab Rentals
 
-### Hotel Page - Details and Reviews 
+![ezgif com-gif-maker (2)](https://user-images.githubusercontent.com/61850850/101993655-528a4180-3ce2-11eb-9893-33eddb917a03.gif)
 
 ### Login Page - Register, Login with TRVL account or Google OAuth
 
+![ezgif com-gif-maker (1)](https://user-images.githubusercontent.com/61850850/101993653-5027e780-3ce2-11eb-9a3c-d400e405c83b.gif)
+
 ### User Profile - Update Info, View User Insights
+
+![ezgif com-gif-maker (3)](https://user-images.githubusercontent.com/61850850/101993659-54540500-3ce2-11eb-8cb1-4ff54f1ddfc1.gif)
 
 ## Citations
 Nearly all of the project code was written by us ourselves. We used documentation code for React Bootstrap, Express, MapBox, and Passportjs where needed. 
