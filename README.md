@@ -53,10 +53,10 @@ This project was built using the MERN stack of technologies.
 <br/>
 
 ### External APIs Used
-We used the Amadeus API for getting real-time flight data and the Airhex API to render airline carrier logos. 
+We used the [Amadeus API](https://developers.amadeus.com/self-service/category/air) for getting real-time flight data and the [Airhex API](https://airhex.com/api/logos/) to render airline carrier logos. 
 
 ### Database
-We used 2 databases - one for all users and another for hotels. <br/>
+We used 2 databases - one for all users and another for the hotels. <br/>
 <table>
 <thead>
 <tr>
