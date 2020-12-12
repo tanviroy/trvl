@@ -1,4 +1,4 @@
-# TRVL - the Travel App
+# TRVL - the Travel App 🌎✈️
 > Project 2 for [CS-1202] Advanced Programming. This is a MERN stack e-commerce (multi-purpose travel booking) platform. This project was built by [Ruthu Rooparaghunath](https://github.com/hulikalruthu), [Soham De](https://github.com/actuallysoham), and [Tanvi Roy](https://github.com/tanviroy). 
 
 ## Quick Start
