@@ -139,7 +139,7 @@ The Figma wireframe for the project can be viewed [here](https://www.figma.com/f
 
 ### Explore - Search Flights, Hotels, and Cab Rentals
 
-![ezgif com-gif-maker (2)](https://user-images.githubusercontent.com/61850850/101993655-528a4180-3ce2-11eb-9893-33eddb917a03.gif)
+![ezgif com-gif-maker (2)](https://user-images.githubusercontent.com/61850850/103472040-4d368900-4dae-11eb-84c6-d33d91a72344.mp4)
 
 ### Login Page - Register, Login with TRVL account or Google OAuth
 
